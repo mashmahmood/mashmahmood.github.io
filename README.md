@@ -7,13 +7,16 @@ Plain HTML, CSS and vanilla JavaScript. No build step, no dependencies.
 
 ```
 index.html          all content lives here
+404.html            pixel art not found page, served automatically by Pages
 styles.css          design tokens at the top (:root)
-main.js             nav, scroll progress, reveals, project filters, stat counters
+main.js             nav, scroll progress, reveals, project filters, stat counters, demo clip
 robots.txt          crawler policy
 sitemap.xml         single page sitemap
 .nojekyll           tells GitHub Pages to serve files as they are
 assets/img/*.svg    placeholder artwork (replace with real images)
-assets/img/og-cover.png  social share card, 1200x630
+assets/img/og-cover.png    social share card, 1200x630
+assets/img/uav-poster.png  poster frame for the thesis clip
+assets/video/       the thesis demo clip goes here, see the README in that folder
 Mashrur_Resume.pdf  linked from the hero, nav and contact section
 ```
 
@@ -22,8 +25,8 @@ Mashrur_Resume.pdf  linked from the hero, nav and contact section
 | id | Section | Contains |
 |:--|:--|:--|
 | `#top` | Hero | Welcome line, social icon links, resume |
-| `#about` | About | Bio, education facts, portrait, full toolkit |
-| `#projects` | Projects | Filterable chronological timeline, including the industrial attachment |
+| `#about` | About | Personal intro, portrait, education and training, toolkit |
+| `#projects` | Projects | Filterable chronological timeline, thesis spotlighted at the top |
 | `#eca` | ECA & Awards | Competitive programming stats, award list, activities |
 | `#contact` | Contact | Email block and profile icons |
 
@@ -51,9 +54,8 @@ file next to it and update the `src` in `index.html`:
 | Placeholder | Used for |
 |:--|:--|
 | `portrait.svg` | photo in the About section (square, 800x800 works) |
-| `uav.svg` | Autonomous Indoor UAV |
+| `uav-poster.png` | poster frame behind the thesis clip |
 | `heatexchanger.svg` | Compact heat exchanger |
-| `plant.svg` | Industrial attachment |
 | `buckling.svg` | Automated buckling rig |
 | `dlsprint.svg` | DL Sprint 2.0 |
 | `simulator.svg` | BRTA driving simulator |
@@ -61,6 +63,12 @@ file next to it and update the `src` in `index.html`:
 
 Project images look best at roughly 16:10 (1200x750). They are cropped with
 `object-fit: cover`, so keep the subject near the centre.
+
+## The thesis clip
+
+The thesis card plays an inline muted loop. Drop `uav-demo.webm` and/or `uav-demo.mp4`
+into `assets/video/`; until then the poster frame shows and nothing breaks. Encoding
+recipes and size targets are in `assets/video/README.md`.
 
 ## Adding a project
 
@@ -70,6 +78,7 @@ Copy any `<li class="tl-item">` block inside `#projectList`, then set:
   (this is what the filter buttons read)
 * the `<p class="tl-year">` value, and keep the list ordered newest first
 * add `is-featured` to the `<article class="tl-card">` for a gradient top bar
+* `is-spotlight` on the `<li>` is the full width treatment reserved for the thesis
 
 ## Theme
 
@@ -90,4 +99,7 @@ Fonts: **Silkscreen** (pixel display), **Space Grotesk** (body and headings),
 * The award list has no outbound links by design; the same evidence is linked from
   the matching project entries.
 * All motion is disabled automatically under `prefers-reduced-motion`.
-* `og-cover.png` was generated as pixel art. Regenerate or replace it if the tagline changes.
+* `og-cover.png` and `uav-poster.png` were generated as pixel art. Replace them with real
+  images whenever you like; keep `og-cover.png` at 1200x630.
+* The thesis clip autoplays muted and only while it is on screen. Under
+  `prefers-reduced-motion` it stops autoplaying and shows normal controls instead.

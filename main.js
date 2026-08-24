@@ -143,6 +143,31 @@
     status.textContent = projectItems.length + " projects shown in all areas.";
   }
 
+  /* ----------------------- inline demo clips, politely ------------------- */
+  /* Muted autoplay loops, but only when the reader has not asked for less
+     motion and only while the clip is actually on screen. */
+  var clips = $$("video.tl-video");
+
+  clips.forEach(function (v) {
+    if (reduced) {
+      v.autoplay = false;
+      v.loop = false;
+      v.controls = true;
+      try { v.pause(); } catch (e) { /* nothing playing yet */ }
+      return;
+    }
+    var play = function () { var r = v.play(); if (r && r.catch) r.catch(function () {}); };
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) play(); else v.pause();
+        });
+      }, { threshold: 0.2 }).observe(v);
+    } else {
+      play();
+    }
+  });
+
   /* ------------------------- count up the CP numbers --------------------- */
   var counters = $$("[data-count]");
 

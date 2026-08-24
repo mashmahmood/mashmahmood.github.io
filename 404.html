@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+<title>Page not found | Mashrur Mahmood</title>
+<meta name="description" content="That page does not exist on mashmahmood.github.io.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .lost {
+    position: relative; overflow: hidden;
+    min-height: 100vh; min-height: 100svh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: clamp(40px, 8vh, 90px) clamp(18px, 4vw, 32px);
+  }
+  .lost-inner { position: relative; z-index: 1; max-width: 620px; }
+
+  .lost-code {
+    margin: 0; font-family: var(--pixel); font-weight: 400; line-height: .95;
+    font-size: clamp(4rem, 22vw, 10rem); letter-spacing: .02em;
+    background: linear-gradient(100deg, var(--accent) 5%, #9BE7FF 48%, var(--accent-2) 95%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: var(--accent);
+    text-shadow: 0 0 60px rgba(94, 234, 212, .16);
+  }
+  .lost-sub {
+    margin: 18px 0 0; font-family: var(--pixel);
+    font-size: clamp(.62rem, 2.4vw, .84rem); letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .lost-text { margin: 20px 0 0; color: var(--muted); font-size: .95rem; }
+
+  /* a little pixel drone, wobbling off course */
+  .drone { display: grid; grid-template-columns: repeat(7, 10px); gap: 2px; margin: 34px auto 0; width: max-content; }
+  .drone i { width: 10px; height: 10px; background: transparent; }
+  .drone i.a { background: var(--accent); }
+  .drone i.b { background: var(--accent-2); }
+  .drone i.c { background: var(--line); }
+  .drone-wrap { animation: wobble 3.4s ease-in-out infinite; }
+  @keyframes wobble {
+    0%, 100% { transform: translate(-10px, 0) rotate(-4deg); }
+    50%      { transform: translate(10px, -8px) rotate(4deg); }
+  }
+
+  .lost-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 34px; }
+  .lost-links a {
+    font-family: var(--pixel); font-size: .64rem; letter-spacing: .05em;
+    padding: 13px 20px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--text);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, color .18s ease;
+  }
+  .lost-links a:hover {
+    color: var(--accent); border-color: var(--accent-dim);
+    transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--accent-dim);
+  }
+  .lost-links a.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+  .lost-links a.primary:hover { color: var(--on-accent); }
+
+  @media (prefers-reduced-motion: reduce) { .drone-wrap { animation: none; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#lost">Skip to content</a>
+<div class="scanlines" aria-hidden="true"></div>
+
+<main class="lost hero" id="lost">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="lost-inner">
+    <h1 class="lost-code">404</h1>
+    <p class="lost-sub">Signal lost</p>
+
+    <div class="drone-wrap" aria-hidden="true">
+      <div class="drone">
+        <i class="a"></i><i class="a"></i><i></i><i class="c"></i><i></i><i class="a"></i><i class="a"></i>
+        <i></i><i class="c"></i><i></i><i class="c"></i><i></i><i class="c"></i><i></i>
+        <i></i><i></i><i class="b"></i><i class="b"></i><i class="b"></i><i></i><i></i>
+        <i></i><i></i><i class="b"></i><i class="a"></i><i class="b"></i><i></i><i></i>
+        <i></i><i></i><i></i><i class="c"></i><i></i><i></i><i></i>
+      </div>
+    </div>
+
+    <p class="lost-text">
+      This page is not in the map. The drone flew off, the link went stale, or something got
+      renamed. Nothing is broken on your end.
+    </p>
+
+    <nav class="lost-links" aria-label="Where to go next">
+      <a class="primary" href="/">Home</a>
+      <a href="/#projects">Projects</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</main>
+
+</body>
+</html>
