@@ -2,372 +2,549 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mashrur Mahmood — Robotics &amp; AI</title>
-<meta name="description" content="Mashrur Mahmood — mechanical engineering student at BUET working on robotics, autonomous systems and applied AI/ML. Codeforces Expert and ICPC Dhaka regionalist.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07090E">
+
+<title>Mashrur Mahmood | Robotics, AI and Software Portfolio</title>
+<meta name="description" content="Portfolio of Mashrur Mahmood, a BUET mechanical engineering graduate working across robotics, autonomous systems, applied AI and machine learning. Codeforces Expert and ICPC Dhaka regionalist.">
 <meta name="author" content="Mashrur Mahmood">
-<meta property="og:title" content="Mashrur Mahmood — Robotics &amp; AI">
-<meta property="og:description" content="Mechanical engineer building robots, autonomous systems and AI tools.">
-<meta property="og:type" content="website">
-<link rel="icon" href="assets/img/favicon.svg">
+<meta name="keywords" content="Mashrur Mahmood, robotics engineer, AI, machine learning, ROS 2, PX4, autonomous UAV, SLAM, competitive programming, Codeforces Expert, ICPC, BUET, mechanical engineering, Dhaka">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mashmahmood.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Mashrur Mahmood">
+<meta property="og:title" content="Mashrur Mahmood | Robotics, AI and Software Portfolio">
+<meta property="og:description" content="Mechanical engineering graduate building robots, autonomous systems and AI driven software. Codeforces Expert and ICPC Dhaka regionalist.">
+<meta property="og:url" content="https://mashmahmood.github.io/">
+<meta property="og:image" content="https://mashmahmood.github.io/assets/img/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mashrur Mahmood portfolio cover">
+<meta property="og:locale" content="en_US">
+<meta property="profile:first_name" content="Mashrur">
+<meta property="profile:last_name" content="Mahmood">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mashrur Mahmood | Robotics, AI and Software Portfolio">
+<meta name="twitter:description" content="Mechanical engineering graduate building robots, autonomous systems and AI driven software.">
+<meta name="twitter:image" content="https://mashmahmood.github.io/assets/img/og-cover.png">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://mashmahmood.github.io/#person",
+      "name": "Mashrur Mahmood",
+      "givenName": "Mashrur",
+      "familyName": "Mahmood",
+      "url": "https://mashmahmood.github.io/",
+      "email": "mailto:mashrur.mahmood@gmail.com",
+      "jobTitle": "Robotics and AI Engineer",
+      "description": "Mechanical engineering graduate working across robotics, autonomous systems, applied machine learning and software.",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Bangladesh University of Engineering and Technology"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dhaka",
+        "addressCountry": "BD"
+      },
+      "knowsAbout": [
+        "Robotics", "ROS 2", "PX4", "SLAM", "Autonomous UAV", "Machine Learning",
+        "Deep Learning", "Computer Vision", "Competitive Programming",
+        "Mechanical Design", "Unity", "Embedded Systems"
+      ],
+      "sameAs": [
+        "https://github.com/mashmahmood",
+        "https://www.linkedin.com/in/mashrur-mahmood/",
+        "https://codeforces.com/profile/iamashrur",
+        "https://leetcode.com/u/mashrur/"
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://mashmahmood.github.io/#webpage",
+      "url": "https://mashmahmood.github.io/",
+      "name": "Mashrur Mahmood | Robotics, AI and Software Portfolio",
+      "inLanguage": "en",
+      "mainEntity": { "@id": "https://mashmahmood.github.io/#person" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
 
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top"><span class="brand-mark">MM</span> Mashrur Mahmood</a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </span>
+      <span class="brand-name">Mashrur Mahmood</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu">
       <span></span><span></span><span></span>
     </button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#cp">Competitive</a>
-      <a href="#experience">Experience</a>
-      <a href="#awards">Awards</a>
-      <a href="#contact">Contact</a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#about"><i>01</i>About</a>
+      <a href="#projects"><i>02</i>Projects</a>
+      <a href="#eca"><i>03</i>ECA &amp; Awards</a>
+      <a href="#contact"><i>04</i>Contact</a>
+      <a class="nav-resume" href="Mashrur_Resume.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
+<!-- ================= HERO ================= -->
+<section class="hero" id="top" aria-label="Introduction">
   <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
   <div class="wrap hero-inner">
-    <p class="eyebrow reveal">Dhaka, Bangladesh</p>
-    <h1 class="reveal">Mashrur Mahmood</h1>
-    <p class="tagline reveal">
-      Mechanical engineer building
-      <span class="rotator"><span class="rotator-word" id="rotator">robots</span><span class="caret" aria-hidden="true"></span></span>
-    </p>
-    <p class="lede reveal">
-      Final-year BSc in Mechanical Engineering at BUET. Robotics and autonomous systems by
-      practice, competitive programmer by habit — now focused on machine learning, deep
-      learning, and putting AI to work inside real engineering systems.
-    </p>
-    <div class="cta reveal">
-      <a class="btn btn-primary" href="Mashrur_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-      <a class="btn" href="https://github.com/mashmahmood" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/mashrur-mahmood/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="mailto:mashrur.mahmood@gmail.com">Email</a>
-    </div>
+    <h1 class="hero-title">
+      <span class="hero-line reveal">Welcome</span>
+      <span class="hero-line hero-line-2 reveal">to my portfolio<span class="caret" aria-hidden="true"></span></span>
+    </h1>
+
+    <ul class="social reveal" aria-label="Profiles and contact">
+      <li>
+        <a href="https://github.com/mashmahmood" target="_blank" rel="noopener me" aria-label="GitHub profile" data-tip="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/mashrur-mahmood/" target="_blank" rel="noopener me" aria-label="LinkedIn profile" data-tip="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://codeforces.com/profile/iamashrur" target="_blank" rel="noopener me" aria-label="Codeforces profile" data-tip="Codeforces">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 7.5A1.5 1.5 0 0 1 6 9v10.5A1.5 1.5 0 0 1 4.5 21h-3C.673 21 0 20.328 0 19.5V9c0-.828.673-1.5 1.5-1.5h3zm9-4.5A1.5 1.5 0 0 1 15 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5v-15A1.5 1.5 0 0 1 10.5 3h3zm9 7.5A1.5 1.5 0 0 1 24 12v7.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 18 19.5V12a1.5 1.5 0 0 1 1.5-1.5h3z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://leetcode.com/u/mashrur/" target="_blank" rel="noopener me" aria-label="LeetCode profile" data-tip="LeetCode">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:mashrur.mahmood@gmail.com" aria-label="Send an email" data-tip="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2.75 5.75h18.5v12.5H2.75z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m3.2 6.4 8.8 6.4 8.8-6.4"/></svg>
+        </a>
+      </li>
+      <li class="social-sep" aria-hidden="true"></li>
+      <li>
+        <a class="social-text" href="Mashrur_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </li>
+    </ul>
+
+    <a class="scroll-cue reveal" href="#about" aria-label="Scroll to the About section">
+      <span class="scroll-cue-box" aria-hidden="true"></span>
+      <span class="scroll-cue-label">scroll</span>
+    </a>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section id="about" class="section">
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section" aria-labelledby="about-h">
   <div class="wrap">
-    <h2 class="section-title"><span class="idx">01</span> About</h2>
+    <div class="section-head reveal">
+      <p class="kicker">01 / About</p>
+      <h2 id="about-h">Brief Introduction</h2>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
     <div class="about">
-      <div class="about-text">
+      <div class="about-text reveal">
         <p>
-          I am a mechanical engineering student whose work has drifted, deliberately, toward
-          software and autonomy. My undergraduate thesis is an autonomous quadcopter that
-          navigates and maps indoors without GPS while running a thermal survey — built end to
-          end, from airframe and sensor integration to the ROS&nbsp;2 and PX4 stack that flies it.
+          I am a mechanical engineering graduate from BUET whose work kept drifting toward
+          software and autonomy. Robotics by practice, competitive programming by habit, and
+          machine learning by deliberate choice.
         </p>
         <p>
-          Alongside that, competitive programming has been a constant since school:
-          <strong>Codeforces Expert</strong>, 500+ problems solved, and an honourable mention at
-          the ICPC Dhaka Regional. It is where I learned to reason about correctness and
-          complexity under pressure.
+          My undergraduate thesis was an autonomous quadcopter that navigates and maps indoors
+          without GPS while running a thermal survey. I built it end to end, from airframe and
+          sensor integration to the ROS&nbsp;2 and PX4 stack that flies it.
+        </p>
+        <p>
+          What I enjoy most is interdisciplinary work: problems sitting between mechanical
+          design, control, code and AI, where no single one of the four is enough on its own.
+          Competitive programming is where I learned to reason about correctness and complexity
+          under pressure, and it still shapes how I write everything else.
         </p>
         <p class="now">
           <span class="now-dot" aria-hidden="true"></span>
-          <strong>Currently:</strong> deepening my machine learning and deep learning work, and
-          looking for roles where AI is integrated into products and physical systems — robotics,
-          perception, and applied ML.
+          <strong>Currently</strong> looking for roles where AI is built into real products and
+          physical systems: robotics, perception, applied ML and the software around them.
         </p>
       </div>
-      <figure class="about-figure">
-        <img src="assets/img/portrait.svg" alt="Portrait placeholder" width="800" height="800" loading="lazy">
-        <figcaption>Placeholder — swap in a photo</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
 
-<!-- ============ SKILLS ============ -->
-<section id="skills" class="section alt">
-  <div class="wrap">
-    <h2 class="section-title"><span class="idx">02</span> Skills</h2>
+      <aside class="about-side reveal" aria-label="Quick facts">
+        <figure class="portrait">
+          <img src="assets/img/portrait.svg" alt="Portrait of Mashrur Mahmood" width="800" height="800" loading="lazy" decoding="async">
+        </figure>
+        <dl class="facts">
+          <div>
+            <dt>Degree</dt>
+            <dd>BSc Mechanical Engineering, BUET<span>Nov 2021 to Jun 2026 &middot; CGPA 3.67 / 4.00</span></dd>
+          </div>
+          <div>
+            <dt>Before that</dt>
+            <dd>HSC Science, Saint Joseph<span>2020 &middot; GPA 5.00 / 5.00</span></dd>
+          </div>
+          <div>
+            <dt>Based in</dt>
+            <dd>Dhaka, Bangladesh<span>Open to relocation and remote</span></dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+
+    <h3 class="sub-head reveal">Toolkit</h3>
     <div class="skills">
-      <div class="skill-group">
-        <h3>Languages</h3>
+      <div class="skill-group reveal">
+        <h4>Languages</h4>
         <ul class="chips"><li>Python</li><li>C / C++</li><li>C#</li><li>Java</li><li>JavaScript</li><li>HTML / CSS</li></ul>
       </div>
-      <div class="skill-group">
-        <h3>AI &amp; Data</h3>
+      <div class="skill-group reveal">
+        <h4>AI &amp; Data</h4>
         <ul class="chips"><li>NumPy</li><li>pandas</li><li>Matplotlib</li><li>Jupyter</li><li>Deep learning</li><li>Computer vision</li></ul>
       </div>
-      <div class="skill-group">
-        <h3>Robotics &amp; Embedded</h3>
+      <div class="skill-group reveal">
+        <h4>Robotics &amp; Embedded</h4>
         <ul class="chips"><li>ROS 2</li><li>PX4</li><li>Gazebo</li><li>Nav2</li><li>slam-toolbox</li><li>MAVLink</li><li>Pixhawk</li><li>Raspberry Pi</li><li>Arduino</li><li>LiDAR</li></ul>
       </div>
-      <div class="skill-group">
-        <h3>Web</h3>
-        <ul class="chips"><li>React</li><li>Node.js</li></ul>
+      <div class="skill-group reveal">
+        <h4>Engineering &amp; Tools</h4>
+        <ul class="chips"><li>Git</li><li>Docker</li><li>SolidWorks</li><li>Linux</li><li>VS Code</li><li>Visual Studio</li></ul>
       </div>
-      <div class="skill-group">
-        <h3>Tools</h3>
-        <ul class="chips"><li>Git</li><li>Docker</li><li>VS Code</li><li>Visual Studio</li><li>PyCharm</li><li>SolidWorks</li></ul>
-      </div>
-      <div class="skill-group">
-        <h3>Game &amp; Creative</h3>
+      <div class="skill-group reveal">
+        <h4>Game &amp; Creative</h4>
         <ul class="chips"><li>Unity</li><li>Godot</li><li>Photoshop</li><li>Illustrator</li><li>Premiere Pro</li></ul>
       </div>
+      <div class="skill-group reveal">
+        <h4>Web</h4>
+        <ul class="chips"><li>React</li><li>Node.js</li></ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROJECTS ============ -->
-<section id="projects" class="section">
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section alt" aria-labelledby="projects-h">
   <div class="wrap">
-    <h2 class="section-title"><span class="idx">03</span> Projects</h2>
-    <p class="section-note">Ordered by relevance to robotics and AI.</p>
-    <div class="cards">
-
-      <article class="card">
-        <img src="assets/img/uav.svg" alt="Autonomous indoor UAV placeholder" width="1200" height="750" loading="lazy">
-        <div class="card-body">
-          <p class="card-meta">Undergraduate Thesis · Apr 2025 – Jun 2026</p>
-          <h3>Autonomous Indoor UAV — SLAM &amp; Thermal Surveying</h3>
-          <p>An autonomous quadcopter for GPS-denied indoor navigation: designed, assembled and
-             integrated, with LiDAR SLAM, optical-flow stabilisation and onboard thermal imaging.</p>
-          <ul class="chips sm"><li>ROS 2</li><li>PX4</li><li>Nav2</li><li>slam-toolbox</li><li>Gazebo</li><li>MAVLink</li><li>Pixhawk 6C</li></ul>
-          <p class="card-links">
-            <a href="https://drive.google.com/file/d/1je-og2tN93wE13JT9YaWHDui7SlkzIIq/view?usp=sharing" target="_blank" rel="noopener">Thesis book</a>
-            <a href="https://drive.google.com/file/d/1Ey1UU40EU9y6pPJglhoveMlVFrcQvNYr/view?usp=sharing" target="_blank" rel="noopener">Demo video</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/img/dlsprint.svg" alt="DL Sprint placeholder" width="1200" height="750" loading="lazy">
-        <div class="card-body">
-          <p class="card-meta">BUET CSE Fest · 2023 · <span class="award">BUET Rising Team</span></p>
-          <h3>DL Sprint 2.0 — Bengali Document Layout Analysis</h3>
-          <p>A deep learning competition on segmenting and classifying regions of Bengali document
-             images. Our approach and results were written up and presented at the festival.</p>
-          <ul class="chips sm"><li>Deep learning</li><li>Computer vision</li><li>Python</li><li>Segmentation</li></ul>
-          <p class="card-links">
-            <a href="https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing" target="_blank" rel="noopener">Presented paper</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/img/aicontest.svg" alt="AI contest placeholder" width="1200" height="750" loading="lazy">
-        <div class="card-body">
-          <p class="card-meta">BUET CSE Fest · 2022 · <span class="award">5th place</span></p>
-          <h3>Steal the Flag — Game AI Agent</h3>
-          <p>A competitive bot for the CSE Fest AI Contest: strategy and pathfinding for an
-             adversarial capture-the-flag arena, tuned across rounds of head-to-head matches.</p>
-          <ul class="chips sm"><li>Game AI</li><li>Pathfinding</li><li>Heuristics</li></ul>
-          <p class="card-links">
-            <a href="https://github.com/mashmahmood/codinggame_stealtheflag" target="_blank" rel="noopener">GitHub</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/img/simulator.svg" alt="Driving simulator placeholder" width="1200" height="750" loading="lazy">
-        <div class="card-body">
-          <p class="card-meta">Unity · Contributed</p>
-          <h3>BRTA Driver Training Simulator</h3>
-          <p>A manual-transmission driver training simulator built in Unity, with Logitech steering
-             wheel and gear-shifter peripherals integrated for realistic vehicle control.</p>
-          <ul class="chips sm"><li>Unity</li><li>C#</li><li>Vehicle physics</li><li>Hardware I/O</li></ul>
-          <p class="card-links">
-            <a href="https://drive.google.com/file/d/1_D9t0WSmSG-gKEQoYqpyvuMCEqEKiS3M/view?usp=sharing" target="_blank" rel="noopener">Demo video</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/img/buckling.svg" alt="Buckling test rig placeholder" width="1200" height="750" loading="lazy">
-        <div class="card-body">
-          <p class="card-meta">Electro-Mechanical System Design · Nov 2023 – Mar 2024</p>
-          <h3>Automated Buckling Load Determination</h3>
-          <p>An electro-mechanical rig that finds the critical buckling load of a slender column
-             automatically — hydraulic actuation under Arduino control, with a real-time detection
-             algorithm calling the buckling point live.</p>
-          <ul class="chips sm"><li>Arduino Mega</li><li>Load cell + HX711</li><li>Hydraulics</li><li>MOSFET</li><li>Control</li></ul>
-          <p class="card-links">
-            <a href="https://drive.google.com/file/d/1Z4xrh70JVJ79gZ57j2d0oMXJqUDwjnv1/view?usp=sharing" target="_blank" rel="noopener">Poster</a>
-            <a href="https://youtu.be/QeiWl80-ftg" target="_blank" rel="noopener">Overview</a>
-            <a href="https://youtu.be/Pe4uGSBcJqo" target="_blank" rel="noopener">Guide</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/img/heatexchanger.svg" alt="Heat exchanger placeholder" width="1200" height="750" loading="lazy">
-        <div class="card-body">
-          <p class="card-meta">Thermo Fluid System Design · Sep 2024 – Mar 2025</p>
-          <h3>Compact Heat Exchanger for Two-Wheelers</h3>
-          <p>Flat tubes and triangular louvered fins, out-performing the conventional design on heat
-             transfer. A Python optimiser searched fin and tube geometry to cut weight while holding
-             thermal performance; the design was then manufactured and pressure tested.</p>
-          <ul class="chips sm"><li>Python</li><li>Thermal design</li><li>Optimisation</li><li>Laser cutting</li><li>Welding</li></ul>
-          <p class="card-links">
-            <a href="https://drive.google.com/file/d/1qZ2tPLo2bX1O4M4IzsQ0tO_CYrqdp-Rn/view?usp=sharing" target="_blank" rel="noopener">Report</a>
-          </p>
-        </div>
-      </article>
-
+    <div class="section-head reveal">
+      <p class="kicker">02 / Projects</p>
+      <h2 id="projects-h">Things I have built</h2>
+      <span class="rule" aria-hidden="true"></span>
     </div>
+
+    <div class="filters reveal" role="group" aria-label="Filter projects by area">
+      <button type="button" class="filter is-on" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="filter" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
+      <button type="button" class="filter" data-filter="robotics" aria-pressed="false">Robotics</button>
+      <button type="button" class="filter" data-filter="mechanical" aria-pressed="false">Mechanical</button>
+      <button type="button" class="filter" data-filter="games" aria-pressed="false">Games</button>
+    </div>
+    <p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p>
+
+    <ol class="tl" id="projectList">
+
+      <li class="tl-item reveal" data-tags="ai robotics">
+        <p class="tl-year"><span>2026</span></p>
+        <article class="tl-card is-featured">
+          <div class="tl-media">
+            <img src="assets/img/uav.svg" alt="Autonomous indoor UAV with SLAM and thermal surveying" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="tl-body">
+            <p class="tl-meta"><span class="tl-lead">Undergraduate thesis</span> &middot; Apr 2025 to Jun 2026</p>
+            <h3>Autonomous Indoor UAV with SLAM and Thermal Surveying</h3>
+            <p>An autonomous quadcopter for GPS denied indoor flight, designed and assembled from
+               scratch, with LiDAR SLAM, optical flow stabilisation and onboard thermal imaging
+               feeding a live survey.</p>
+            <ul class="chips sm"><li>ROS 2</li><li>PX4</li><li>Nav2</li><li>slam-toolbox</li><li>Gazebo</li><li>Pixhawk 6C</li></ul>
+            <p class="tl-links">
+              <a href="https://drive.google.com/file/d/1je-og2tN93wE13JT9YaWHDui7SlkzIIq/view?usp=sharing" target="_blank" rel="noopener">Thesis book</a>
+              <a href="https://drive.google.com/file/d/1Ey1UU40EU9y6pPJglhoveMlVFrcQvNYr/view?usp=sharing" target="_blank" rel="noopener">Demo video</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+      <li class="tl-item reveal" data-tags="mechanical">
+        <p class="tl-year"><span>2025</span></p>
+        <article class="tl-card">
+          <div class="tl-media">
+            <img src="assets/img/heatexchanger.svg" alt="Compact louvered fin heat exchanger for two wheelers" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="tl-body">
+            <p class="tl-meta"><span class="tl-lead">Thermo fluid system design</span> &middot; Sep 2024 to Mar 2025</p>
+            <h3>Compact Heat Exchanger for Two Wheelers</h3>
+            <p>Flat tubes and triangular louvered fins that outperform the conventional design on
+               heat transfer. A Python optimiser searched fin and tube geometry to cut weight
+               while holding performance, and the winning design was manufactured and pressure
+               tested.</p>
+            <ul class="chips sm"><li>Python</li><li>Thermal design</li><li>Optimisation</li><li>Laser cutting</li></ul>
+            <p class="tl-links">
+              <a href="https://drive.google.com/file/d/1qZ2tPLo2bX1O4M4IzsQ0tO_CYrqdp-Rn/view?usp=sharing" target="_blank" rel="noopener">Report</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+      <li class="tl-item reveal" data-tags="mechanical">
+        <p class="tl-year"><span>2025</span></p>
+        <article class="tl-card">
+          <div class="tl-media">
+            <img src="assets/img/plant.svg" alt="Combined cycle power plant industrial training" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="tl-body">
+            <p class="tl-meta"><span class="tl-lead">Industrial training</span> &middot; Mar 2025</p>
+            <h3>Industrial Attachment, United Ashuganj Energy Ltd.</h3>
+            <p>A 13 day programme inside a 195&nbsp;MW combined cycle gas engine power plant,
+               covering gas engines, HRSGs, steam turbines, gas RMS, substations and auxiliaries,
+               with hands on exposure to DCS and SCADA operation, plant safety and preventive
+               maintenance.</p>
+            <ul class="chips sm"><li>Power plant</li><li>DCS / SCADA</li><li>Turbomachinery</li><li>Maintenance</li></ul>
+            <p class="tl-links">
+              <a href="https://drive.google.com/file/d/1FGOMm-W1k0tzop3Tp_RQ-_Vlo7KT0Nnw/view?usp=sharing" target="_blank" rel="noopener">Training report</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+      <li class="tl-item reveal" data-tags="robotics mechanical">
+        <p class="tl-year"><span>2024</span></p>
+        <article class="tl-card">
+          <div class="tl-media">
+            <img src="assets/img/buckling.svg" alt="Automated buckling load test rig" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="tl-body">
+            <p class="tl-meta"><span class="tl-lead">Electro mechanical system design</span> &middot; Nov 2023 to Mar 2024</p>
+            <h3>Automated Buckling Load Determination</h3>
+            <p>A rig that finds the critical buckling load of a slender column on its own:
+               hydraulic actuation under Arduino control, with a real time detection algorithm
+               calling the buckling point live instead of by eye.</p>
+            <ul class="chips sm"><li>Arduino Mega</li><li>Load cell + HX711</li><li>Hydraulics</li><li>Control</li></ul>
+            <p class="tl-links">
+              <a href="https://drive.google.com/file/d/1Z4xrh70JVJ79gZ57j2d0oMXJqUDwjnv1/view?usp=sharing" target="_blank" rel="noopener">Poster</a>
+              <a href="https://youtu.be/QeiWl80-ftg" target="_blank" rel="noopener">Overview</a>
+              <a href="https://youtu.be/Pe4uGSBcJqo" target="_blank" rel="noopener">Guide</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+      <li class="tl-item reveal" data-tags="ai">
+        <p class="tl-year"><span>2023</span></p>
+        <article class="tl-card is-featured">
+          <div class="tl-media">
+            <img src="assets/img/dlsprint.svg" alt="DL Sprint Bengali document layout analysis" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="tl-body">
+            <p class="tl-meta"><span class="tl-lead">BUET CSE Fest</span> &middot; 2023 &middot; <span class="tl-award">BUET Rising Team</span></p>
+            <h3>DL Sprint 2.0, Bengali Document Layout Analysis</h3>
+            <p>A deep learning competition on segmenting and classifying regions of Bengali
+               document images. Our approach and results were written up as a paper and presented
+               at the festival.</p>
+            <ul class="chips sm"><li>Deep learning</li><li>Computer vision</li><li>Segmentation</li><li>Python</li></ul>
+            <p class="tl-links">
+              <a href="https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing" target="_blank" rel="noopener">Presented paper</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+      <li class="tl-item reveal" data-tags="games">
+        <p class="tl-year"><span>2023</span></p>
+        <article class="tl-card">
+          <div class="tl-media">
+            <img src="assets/img/simulator.svg" alt="BRTA manual transmission driver training simulator" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="tl-body">
+            <p class="tl-meta"><span class="tl-lead">Unity</span> &middot; Contributor</p>
+            <h3>BRTA Driver Training Simulator</h3>
+            <p>A manual transmission driver training simulator built in Unity, with Logitech
+               steering wheel and gear shifter peripherals wired in so the vehicle handles the way
+               a real one does.</p>
+            <ul class="chips sm"><li>Unity</li><li>C#</li><li>Vehicle physics</li><li>Hardware I/O</li></ul>
+            <p class="tl-links">
+              <a href="https://drive.google.com/file/d/1_D9t0WSmSG-gKEQoYqpyvuMCEqEKiS3M/view?usp=sharing" target="_blank" rel="noopener">Demo video</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+      <li class="tl-item reveal" data-tags="ai games">
+        <p class="tl-year"><span>2022</span></p>
+        <article class="tl-card">
+          <div class="tl-media">
+            <img src="assets/img/aicontest.svg" alt="Steal the Flag competitive game AI agent" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="tl-body">
+            <p class="tl-meta"><span class="tl-lead">BUET CSE Fest AI Contest</span> &middot; 2022 &middot; <span class="tl-award">5th place</span></p>
+            <h3>Steal the Flag, Game AI Agent</h3>
+            <p>A competitive bot for an adversarial capture the flag arena: strategy, pathfinding
+               and heuristics tuned across rounds of head to head matches against other teams.</p>
+            <ul class="chips sm"><li>Game AI</li><li>Pathfinding</li><li>Heuristics</li></ul>
+            <p class="tl-links">
+              <a href="https://github.com/mashmahmood/codinggame_stealtheflag" target="_blank" rel="noopener">Source on GitHub</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+    </ol>
   </div>
 </section>
 
-<!-- ============ COMPETITIVE PROGRAMMING ============ -->
-<section id="cp" class="section alt">
+<!-- ================= ECA AND AWARDS ================= -->
+<section id="eca" class="section" aria-labelledby="eca-h">
   <div class="wrap">
-    <h2 class="section-title"><span class="idx">04</span> Competitive Programming</h2>
+    <div class="section-head reveal">
+      <p class="kicker">03 / ECA &amp; Awards</p>
+      <h2 id="eca-h">Extracurricular Engagement</h2>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <h3 class="sub-head reveal">Competitive programming</h3>
     <div class="stats">
-      <div class="stat"><span class="stat-num">Expert</span><span class="stat-label">Codeforces title · max rating 1739</span></div>
-      <div class="stat"><span class="stat-num">500+</span><span class="stat-label">problems solved across platforms</span></div>
-      <div class="stat"><span class="stat-num">40<span class="stat-sub">/311</span></span><span class="stat-label">ICPC Dhaka Regional 2025 · Honourable Mention</span></div>
+      <div class="stat reveal">
+        <span class="stat-num">Expert</span>
+        <span class="stat-label">Codeforces title, max rating <b data-count="1739">1739</b></span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num"><b data-count="500">500</b>+</span>
+        <span class="stat-label">Problems solved across platforms</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num"><b data-count="40">40</b><span class="stat-sub">/311</span></span>
+        <span class="stat-label">ICPC Dhaka Regional 2025, honourable mention</span>
+      </div>
     </div>
-    <p class="cp-text">
-      Contests from school level through university — IOI selection contests, IUPCs and the ICPC —
-      across a wide range of data structures and algorithms.
-    </p>
-    <p class="card-links">
-      <a href="https://codeforces.com/profile/iamashrur" target="_blank" rel="noopener">Codeforces</a>
-      <a href="https://leetcode.com/u/mashrur/" target="_blank" rel="noopener">LeetCode</a>
-    </p>
-  </div>
-</section>
 
-<!-- ============ EXPERIENCE ============ -->
-<section id="experience" class="section">
-  <div class="wrap">
-    <h2 class="section-title"><span class="idx">05</span> Experience</h2>
-    <ol class="timeline">
-      <li>
-        <p class="t-when">March 2025</p>
-        <h3>Industrial Attachment — United Ashuganj Energy Ltd.</h3>
-        <p class="t-where">195 MW combined-cycle gas-engine power plant · Ashuganj, Bangladesh</p>
-        <ul>
-          <li>13-day training programme across plant operations.</li>
-          <li>Studied gas engines, HRSGs, steam turbines, gas RMS, substations and auxiliary systems.</li>
-          <li>Hands-on exposure to DCS/SCADA operation, plant safety and preventive maintenance.</li>
-        </ul>
-        <p class="card-links">
-          <a href="https://drive.google.com/file/d/1FGOMm-W1k0tzop3Tp_RQ-_Vlo7KT0Nnw/view?usp=sharing" target="_blank" rel="noopener">Report</a>
-        </p>
-      </li>
-    </ol>
-  </div>
-</section>
+    <div class="cp-foot reveal">
+      <p class="cp-text">
+        Contests from school level through university, including IOI selection contests, IUPCs and
+        the ICPC, across a wide range of data structures and algorithms.
+      </p>
+      <ul class="social sm" aria-label="Competitive programming profiles">
+        <li>
+          <a href="https://codeforces.com/profile/iamashrur" target="_blank" rel="noopener" aria-label="Codeforces profile" data-tip="Codeforces">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 7.5A1.5 1.5 0 0 1 6 9v10.5A1.5 1.5 0 0 1 4.5 21h-3C.673 21 0 20.328 0 19.5V9c0-.828.673-1.5 1.5-1.5h3zm9-4.5A1.5 1.5 0 0 1 15 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5v-15A1.5 1.5 0 0 1 10.5 3h3zm9 7.5A1.5 1.5 0 0 1 24 12v7.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 18 19.5V12a1.5 1.5 0 0 1 1.5-1.5h3z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/u/mashrur/" target="_blank" rel="noopener" aria-label="LeetCode profile" data-tip="LeetCode">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-<!-- ============ EDUCATION ============ -->
-<section id="education" class="section alt">
-  <div class="wrap">
-    <h2 class="section-title"><span class="idx">06</span> Education</h2>
-    <ol class="timeline">
-      <li>
-        <p class="t-when">Nov 2021 – Jun 2026</p>
-        <h3>BSc in Mechanical Engineering</h3>
-        <p class="t-where">Bangladesh University of Engineering and Technology · Dhaka</p>
-        <ul>
-          <li>CGPA 3.67 / 4.00</li>
-          <li>University Merit Stipend (3 terms)</li>
-        </ul>
-      </li>
-      <li>
-        <p class="t-when">2020</p>
-        <h3>Higher Secondary Certificate, Science</h3>
-        <p class="t-where">Saint Joseph Higher Secondary School · Dhaka</p>
-        <ul>
-          <li>GPA 5.00 / 5.00</li>
-        </ul>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ AWARDS ============ -->
-<section id="awards" class="section">
-  <div class="wrap">
-    <h2 class="section-title"><span class="idx">07</span> Achievements</h2>
+    <h3 class="sub-head reveal">Awards</h3>
     <ul class="awards">
-      <li><span class="a-year">2025</span> Honourable Mention — 40th of 311 teams, <strong>ICPC Dhaka Regional</strong></li>
-      <li><span class="a-year">2023</span> <strong>BUET Rising Team</strong> — DL Sprint 2.0, Bengali Document Layout Analysis, BUET CSE Fest
-        <a href="https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing" target="_blank" rel="noopener">paper</a></li>
-      <li><span class="a-year">2023</span> <strong>Best BUET Junior Team</strong> — BUET IEEE CS Game Jam, 96 hours, 30+ teams
-        <a href="https://youtu.be/WUvs_TxE8xU" target="_blank" rel="noopener">demo</a></li>
-      <li><span class="a-year">2022</span> <strong>5th place</strong> — AI Contest, BUET CSE Fest
-        <a href="https://github.com/mashmahmood/codinggame_stealtheflag" target="_blank" rel="noopener">code</a></li>
-      <li><span class="a-year">2018</span> <strong>Winner, National Math Olympiad</strong> · participant, National Math Camp</li>
+      <li class="reveal"><span class="a-year">2025</span><span class="a-text"><strong>Honourable Mention, ICPC Dhaka Regional.</strong> 40th of 311 teams.</span></li>
+      <li class="reveal"><span class="a-year">2023</span><span class="a-text"><strong>BUET Rising Team, DL Sprint 2.0.</strong> Bengali document layout analysis at BUET CSE Fest.</span></li>
+      <li class="reveal"><span class="a-year">2023</span><span class="a-text"><strong>Best BUET Junior Team, IEEE CS Game Jam.</strong> 96 hours, more than 30 competing teams.</span></li>
+      <li class="reveal"><span class="a-year">2022</span><span class="a-text"><strong>5th place, AI Contest, BUET CSE Fest.</strong> Adversarial game AI agent.</span></li>
+      <li class="reveal"><span class="a-year">2022</span><span class="a-text"><strong>University Merit Stipend, BUET.</strong> Awarded across three terms.</span></li>
+      <li class="reveal"><span class="a-year">2018</span><span class="a-text"><strong>Winner, National Math Olympiad.</strong> Participant at the National Math Camp.</span></li>
     </ul>
-  </div>
-</section>
 
-<!-- ============ ACTIVITIES ============ -->
-<section id="activities" class="section alt">
-  <div class="wrap">
-    <h2 class="section-title"><span class="idx">08</span> Leadership &amp; Activities</h2>
-    <div class="cards two">
-      <article class="card plain">
-        <div class="card-body">
-          <p class="card-meta">2019 – 2020</p>
-          <h3>President — Josephite Math Club</h3>
-          <p>Ran the club's flagship event, Josephite Math Mania, end to end; coordinated seminars,
-             led member collaboration and delegation, and produced the annual magazine
-             <em>Summation</em>, including its layout and visual design.</p>
-          <p class="card-links">
-            <a href="https://drive.google.com/file/d/11h2ftA_8NL8xjv4fbew-Xackc7uJfN-_/view?usp=sharing" target="_blank" rel="noopener">Summation (PDF)</a>
-          </p>
-        </div>
+    <h3 class="sub-head reveal">Activities and leadership</h3>
+    <div class="acts">
+      <article class="act reveal">
+        <p class="act-when">Ongoing</p>
+        <h4>Game development</h4>
+        <p>Several Unity 3D projects including Android releases, plus a 96 hour game jam run both
+           online and on site, where our team took Best BUET Junior Team out of more than 30
+           entries.</p>
       </article>
-      <article class="card plain">
-        <div class="card-body">
-          <p class="card-meta">2025 – 2026</p>
-          <h3>Class Representative — BUET</h3>
-          <p>Elected representative for my batch in the Department of Mechanical Engineering,
-             coordinating between students and faculty.</p>
-        </div>
+      <article class="act reveal">
+        <p class="act-when">2019 to 2020</p>
+        <h4>President, Josephite Math Club</h4>
+        <p>Ran the club's flagship event, Josephite Math Mania, end to end. Coordinated seminars,
+           led member collaboration and delegation, and produced the annual magazine
+           <em>Summation</em> including its layout and visual design.</p>
       </article>
-      <article class="card plain">
-        <div class="card-body">
-          <p class="card-meta">Unity · Godot</p>
-          <h3>Game Development</h3>
-          <p>Multiple Unity 3D projects including Android games, plus a 96-hour game jam that ran
-             online and on-site — where our team took Best BUET Junior Team out of 30+ entries.</p>
-          <p class="card-links">
-            <a href="https://youtu.be/WUvs_TxE8xU" target="_blank" rel="noopener">Game jam demo</a>
-          </p>
-        </div>
+      <article class="act reveal">
+        <p class="act-when">2025 to 2026</p>
+        <h4>Class Representative, BUET</h4>
+        <p>Elected representative for my batch in the Department of Mechanical Engineering,
+           coordinating between students and faculty.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section id="contact" class="section contact">
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section alt contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <h2 class="section-title"><span class="idx">09</span> Contact</h2>
-    <p class="contact-lede">
-      Open to roles and collaborations in AI/ML, robotics and autonomous systems.
-      The fastest way to reach me is email.
+    <div class="section-head reveal">
+      <p class="kicker">04 / Contact</p>
+      <h2 id="contact-h">Say hello</h2>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <p class="contact-lede reveal">
+      Open to roles and collaborations in AI and machine learning, robotics and autonomous
+      systems. Email reaches me fastest.
     </p>
-    <div class="cta">
-      <a class="btn btn-primary" href="mailto:mashrur.mahmood@gmail.com">mashrur.mahmood@gmail.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/mashrur-mahmood/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/mashmahmood" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://codeforces.com/profile/iamashrur" target="_blank" rel="noopener">Codeforces</a>
-      <a class="btn" href="Mashrur_Resume.pdf" target="_blank" rel="noopener">Resume</a>
-    </div>
+
+    <a class="mail reveal" href="mailto:mashrur.mahmood@gmail.com">
+      <span class="mail-label">Email</span>
+      <span class="mail-addr">mashrur.mahmood@gmail.com</span>
+    </a>
+
+    <ul class="social lg reveal" aria-label="Profiles and resume">
+      <li>
+        <a href="https://github.com/mashmahmood" target="_blank" rel="noopener me" aria-label="GitHub profile" data-tip="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/mashrur-mahmood/" target="_blank" rel="noopener me" aria-label="LinkedIn profile" data-tip="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://codeforces.com/profile/iamashrur" target="_blank" rel="noopener me" aria-label="Codeforces profile" data-tip="Codeforces">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 7.5A1.5 1.5 0 0 1 6 9v10.5A1.5 1.5 0 0 1 4.5 21h-3C.673 21 0 20.328 0 19.5V9c0-.828.673-1.5 1.5-1.5h3zm9-4.5A1.5 1.5 0 0 1 15 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5v-15A1.5 1.5 0 0 1 10.5 3h3zm9 7.5A1.5 1.5 0 0 1 24 12v7.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 18 19.5V12a1.5 1.5 0 0 1 1.5-1.5h3z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://leetcode.com/u/mashrur/" target="_blank" rel="noopener me" aria-label="LeetCode profile" data-tip="LeetCode">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+        </a>
+      </li>
+      <li class="social-sep" aria-hidden="true"></li>
+      <li><a class="social-text" href="Mashrur_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+    </ul>
   </div>
 </section>
 
@@ -375,11 +552,11 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <p>© <span id="year">2026</span> Mashrur Mahmood</p>
-    <p>Built with plain HTML, CSS and a little JavaScript.</p>
+    <p class="footer-mark">MM &copy; <span id="year">2026</span></p>
+    <p>Hand written HTML, CSS and JavaScript. No frameworks.</p>
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>

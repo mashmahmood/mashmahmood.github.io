@@ -1,11 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="BUCKLING RIG placeholder">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="BUCKLING RIG placeholder artwork">
   <defs>
-    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#1E2A36" stroke-width="1"/>
+    <pattern id="p" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#1D2432" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect width="1200" height="750" fill="#121820"/>
-  <rect width="1200" height="750" fill="url(#g)"/>
-  <rect x="12" y="12" width="1176" height="726" fill="none" stroke="#34D399" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="10 8"/>
-  <text x="50%" y="50%" fill="#5C6C7C" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="54" letter-spacing="4" text-anchor="middle" dominant-baseline="middle">BUCKLING RIG</text>
+  <rect width="1200" height="750" fill="#10141D"/>
+  <rect width="1200" height="750" fill="url(#p)"/>
+  <g fill="#FBBF24" opacity="0.5">
+    <rect x="100" y="150" width="25" height="25"/><rect x="125" y="175" width="25" height="25"/>
+    <rect x="150" y="150" width="25" height="25"/><rect x="1025" y="550" width="25" height="25"/>
+    <rect x="1050" y="525" width="25" height="25"/><rect x="1000" y="575" width="25" height="25"/>
+  </g>
+  <g fill="#A78BFA" opacity="0.35">
+    <rect x="950" y="150" width="25" height="25"/><rect x="975" y="175" width="25" height="25"/>
+    <rect x="150" y="575" width="25" height="25"/><rect x="175" y="550" width="25" height="25"/>
+  </g>
+  <g stroke="#FBBF24" stroke-width="3" fill="none" opacity="0.8">
+    <path d="M50 100V50h50"/><path d="M1100 50h50v50"/>
+    <path d="M1150 650v50h-50"/><path d="M100 700H50v-50"/>
+  </g>
+  <text x="600" y="375" fill="#8D99AE" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="42" letter-spacing="8" text-anchor="middle" dominant-baseline="middle">BUCKLING RIG</text>
+  <text x="600" y="435" fill="#66717F" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="20" letter-spacing="4" text-anchor="middle" dominant-baseline="middle">image placeholder</text>
 </svg>
