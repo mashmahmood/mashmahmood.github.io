@@ -9,13 +9,15 @@ Plain HTML, CSS and vanilla JavaScript. No build step, no dependencies.
 index.html          all content lives here
 404.html            pixel art not found page, served automatically by Pages
 styles.css          design tokens at the top (:root)
-main.js             nav, scroll progress, reveals, project filters, stat counters, demo clip
+main.js             nav, scroll progress, reveals, project filters, stat counters, demo clip,
+                    highlights scroller and its lightbox
 robots.txt          crawler policy
 sitemap.xml         single page sitemap
 .nojekyll           tells GitHub Pages to serve files as they are
 assets/img/*.svg    placeholder artwork (replace with real images)
 assets/img/og-cover.png    social share card, 1200x630
 assets/img/uav-poster.png  poster frame for the thesis clip
+assets/img/highlights/     photos for the Highlights gallery in the ECA section
 assets/video/       the thesis demo clip goes here, see the README in that folder
 Mashrur_Resume.pdf  linked from the hero, nav and contact section
 ```
@@ -26,8 +28,8 @@ Mashrur_Resume.pdf  linked from the hero, nav and contact section
 |:--|:--|:--|
 | `#top` | Hero | Welcome line, social icon links, resume |
 | `#about` | About | Personal intro, portrait, education and training, toolkit |
-| `#projects` | Projects | Filterable chronological timeline, thesis spotlighted at the top |
-| `#eca` | ECA & Awards | Competitive programming stats, award list, activities |
+| `#projects` | Projects | Filterable card grid, no chronology, thesis spotlighted at the top |
+| `#eca` | ECA & Awards | Competitive programming stats, award list, activities, Highlights gallery |
 | `#contact` | Contact | Email block and profile icons |
 
 ## Preview locally
@@ -61,8 +63,15 @@ file next to it and update the `src` in `index.html`:
 | `simulator.svg` | BRTA driving simulator |
 | `aicontest.svg` | Steal the Flag AI agent |
 
-Project images look best at roughly 16:10 (1200x750). They are cropped with
-`object-fit: cover`, so keep the subject near the centre.
+Project images look best at roughly 16:10 (1200x750), which is exactly the shape of the
+card's media box. At that ratio `object-fit: cover` neither crops nor letterboxes, so any
+16:10 file drops straight in. Off ratio files are cropped from the centre, so keep the
+subject there. If an image must never be cropped, for instance a diagram or a screenshot
+with text near the edges, add `is-fit` to its wrapper and it switches to `contain`:
+
+```html
+<div class="proj-media is-fit"> ... </div>
+```
 
 ## The thesis clip
 
@@ -72,13 +81,48 @@ recipes and size targets are in `assets/video/README.md`.
 
 ## Adding a project
 
-Copy any `<li class="tl-item">` block inside `#projectList`, then set:
+Copy any `<li class="proj">` block inside `#projectList`, then set:
 
 * `data-tags` to one or more of `ai`, `robotics`, `mechanical`, `games`
   (this is what the filter buttons read)
-* the `<p class="tl-year">` value, and keep the list ordered newest first
-* add `is-featured` to the `<article class="tl-card">` for a gradient top bar
-* `is-spotlight` on the `<li>` is the full width treatment reserved for the thesis
+* add `is-featured` to the `<article class="proj-card">` for a gradient top bar
+* `is-spotlight` on the `<li>` is the full width, media beside text treatment
+  reserved for the thesis
+
+The grid is `auto-fill` with a 290px minimum, so it lands on three columns at desktop
+width and reflows down on its own. Order the list however reads best; it is deliberately
+not chronological, so there is no year to keep in sync.
+
+## The Highlights gallery
+
+`#eca` ends with a horizontal scroller so photos can be added without making the page
+taller. Each entry is one `<li>` inside `#galTrack`:
+
+```html
+<li>
+  <figure class="gal-item">
+    <button class="gal-shot" type="button"
+            data-full="assets/img/highlights/your-photo.jpg"
+            data-caption="Title, short context"
+            aria-label="Open a larger view: Title">
+      <img src="assets/img/highlights/your-photo.jpg" alt="What the photo shows"
+           width="1200" height="800" loading="lazy" decoding="async">
+    </button>
+    <figcaption>
+      <span class="gal-title">Title</span>
+      <span class="gal-sub">Short context</span>
+    </figcaption>
+  </figure>
+</li>
+```
+
+* Thumbnails are 3:2 and cropped from the centre; `data-full` is what the lightbox shows,
+  so point it at a larger file if you have one.
+* Native scrolling does the work. The arrows, the edge fades and mouse dragging are added
+  by `main.js` and the strip still scrolls with a trackpad, a touch swipe or the keyboard
+  if that script never runs.
+* The files in `assets/img/highlights/` are placeholders. Replace them with real photos
+  and update `alt`, `gal-title` and `gal-sub`.
 
 ## Theme
 

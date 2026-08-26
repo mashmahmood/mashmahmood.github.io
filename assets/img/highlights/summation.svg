@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="SUMMATION MAGAZINE placeholder artwork">
+  <defs>
+    <pattern id="g5" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#1D2432" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="#10141D"/>
+  <rect width="1200" height="800" fill="url(#g5)"/>
+  <g fill="#FBBF24" opacity="0.45">
+    <rect x="100" y="150" width="25" height="25"/>
+    <rect x="700" y="100" width="25" height="25"/>
+    <rect x="1000" y="500" width="25" height="25"/>
+    <rect x="1075" y="650" width="25" height="25"/>
+    <rect x="850" y="525" width="25" height="25"/>
+    <rect x="450" y="100" width="25" height="25"/>
+    <rect x="600" y="300" width="25" height="25"/>
+    <rect x="300" y="225" width="25" height="25"/>
+    <rect x="150" y="625" width="25" height="25"/>
+  </g>
+  <g stroke="#FBBF24" stroke-width="3" fill="none" opacity="0.8">
+    <path d="M50 100V50h50"/><path d="M1100 50h50v50"/>
+    <path d="M1150 700v50h-50"/><path d="M100 750H50v-50"/>
+  </g>
+  <text x="600" y="384" fill="#8D99AE" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="40" letter-spacing="7" text-anchor="middle" dominant-baseline="middle">SUMMATION MAGAZINE</text>
+  <text x="600" y="444" fill="#66717F" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="19" letter-spacing="4" text-anchor="middle" dominant-baseline="middle">photo placeholder</text>
+</svg>

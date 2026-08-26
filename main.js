@@ -106,21 +106,17 @@
 
   /* ---------------------------- project filters -------------------------- */
   var filterButtons = $$(".filter");
-  var projectItems  = $$("#projectList .tl-item");
+  var projectItems  = $$("#projectList .proj");
   var status        = $("#filterStatus");
 
   function applyFilter(key) {
-    var visible = [];
+    var shown = 0;
     projectItems.forEach(function (item) {
       var tags = (item.getAttribute("data-tags") || "").split(/\s+/);
       var match = key === "all" || tags.indexOf(key) !== -1;
       item.classList.toggle("is-hidden", !match);
-      item.classList.remove("is-last");
-      if (match) visible.push(item);
+      if (match) shown++;
     });
-    // the dashed spine should stop at the last item still on screen
-    if (visible.length) visible[visible.length - 1].classList.add("is-last");
-    var shown = visible.length;
 
     if (status) {
       var label = key === "all" ? "all areas" : key;
@@ -146,7 +142,7 @@
   /* ----------------------- inline demo clips, politely ------------------- */
   /* Muted autoplay loops, but only when the reader has not asked for less
      motion and only while the clip is actually on screen. */
-  var clips = $$("video.tl-video");
+  var clips = $$("video.proj-video");
 
   clips.forEach(function (v) {
     if (reduced) {
@@ -167,6 +163,143 @@
       play();
     }
   });
+
+  /* --------------------- highlights: horizontal gallery ------------------ */
+  /* Native scrolling does the scrolling. This only adds the arrows, the edge
+     fades, pointer dragging on desktop, and a small lightbox. */
+
+  var gal      = $("#gal");
+  var galTrack = $("#galTrack");
+  var galBtns  = $$("[data-gal-dir]");
+  var shots    = $$(".gal-shot", galTrack || document);
+  var dragMoved = 0;   /* shared so a drag does not also open the lightbox */
+
+  if (gal && galTrack) {
+    var step = function () {
+      var first = galTrack.querySelector("li");
+      var w = first ? first.getBoundingClientRect().width : 260;
+      return Math.max(w + 16, galTrack.clientWidth * 0.8);
+    };
+
+    var syncEdges = function () {
+      var max = galTrack.scrollWidth - galTrack.clientWidth;
+      var x = galTrack.scrollLeft;
+      gal.classList.toggle("is-at-start", x <= 2);
+      gal.classList.toggle("is-at-end", x >= max - 2);
+      galBtns.forEach(function (b) {
+        var dir = Number(b.getAttribute("data-gal-dir"));
+        b.disabled = max <= 2 || (dir < 0 ? x <= 2 : x >= max - 2);
+      });
+    };
+
+    galBtns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        galTrack.scrollBy({
+          left: Number(b.getAttribute("data-gal-dir")) * step(),
+          behavior: reduced ? "auto" : "smooth"
+        });
+      });
+    });
+
+    galTrack.addEventListener("scroll", syncEdges, { passive: true });
+    window.addEventListener("resize", syncEdges, { passive: true });
+    syncEdges();
+
+    /* click and drag, for people on a mouse with no horizontal wheel */
+    var dragging = false, startX = 0, startLeft = 0;
+
+    galTrack.addEventListener("pointerdown", function (e) {
+      dragMoved = 0;
+      if (e.pointerType === "touch" || e.button !== 0) return;
+      dragging = true;
+      startX = e.clientX;
+      startLeft = galTrack.scrollLeft;
+    });
+    galTrack.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - startX;
+      dragMoved = Math.max(dragMoved, Math.abs(dx));
+      if (dragMoved > 4) galTrack.classList.add("is-dragging");
+      galTrack.scrollLeft = startLeft - dx;
+    });
+    ["pointerup", "pointercancel", "pointerleave"].forEach(function (evt) {
+      galTrack.addEventListener(evt, function () {
+        dragging = false;
+        galTrack.classList.remove("is-dragging");
+      });
+    });
+  }
+
+  /* ------------------------- lightbox for the gallery -------------------- */
+
+  var lb      = $("#lightbox");
+  var lbImg   = $("#lbImg");
+  var lbCap   = $("#lbCap");
+  var lbClose = $("#lbClose");
+  var lbIndex = 0;
+  var lastFocus = null;
+
+  function lbShow(i) {
+    if (!shots.length) return;
+    lbIndex = (i + shots.length) % shots.length;
+    var shot = shots[lbIndex];
+    var img = shot.querySelector("img");
+    lbImg.src = shot.getAttribute("data-full") || (img && img.src) || "";
+    lbImg.alt = (img && img.alt) || "";
+    lbCap.textContent = shot.getAttribute("data-caption") || "";
+  }
+
+  function lbOpen(i) {
+    if (!lb) return;
+    lastFocus = document.activeElement;
+    lbShow(i);
+    lb.hidden = false;
+    document.body.style.overflow = "hidden";
+    if (lbClose) lbClose.focus();
+  }
+
+  function lbHide() {
+    if (!lb || lb.hidden) return;
+    lb.hidden = true;
+    lbImg.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  if (lb && shots.length) {
+    shots.forEach(function (shot, i) {
+      shot.addEventListener("click", function () {
+        if (dragMoved > 4) return;   /* that was a drag, not a tap */
+        lbOpen(i);
+      });
+    });
+
+    $$("[data-lb-dir]", lb).forEach(function (b) {
+      b.addEventListener("click", function () {
+        lbShow(lbIndex + Number(b.getAttribute("data-lb-dir")));
+      });
+    });
+
+    if (lbClose) lbClose.addEventListener("click", lbHide);
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb) lbHide();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (lb.hidden) return;
+      if (e.key === "Escape") { lbHide(); return; }
+      if (e.key === "ArrowRight") { lbShow(lbIndex + 1); e.preventDefault(); }
+      if (e.key === "ArrowLeft")  { lbShow(lbIndex - 1); e.preventDefault(); }
+      if (e.key === "Tab") {
+        /* keep focus inside the dialog while it is open */
+        var f = $$("button", lb);
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+        else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+      }
+    });
+  }
 
   /* ------------------------- count up the CP numbers --------------------- */
   var counters = $$("[data-count]");

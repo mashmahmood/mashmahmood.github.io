@@ -285,14 +285,13 @@
     </div>
     <p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p>
 
-    <ol class="tl" id="projectList">
+    <ul class="proj-grid" id="projectList">
 
-      <li class="tl-item is-spotlight reveal" data-tags="ai robotics">
-        <p class="tl-year"><span>2026</span></p>
-        <article class="tl-card">
-          <p class="tl-flag">Flagship project</p>
-          <div class="tl-media">
-            <video class="tl-video" id="thesisVideo"
+      <li class="proj is-spotlight reveal" data-tags="ai robotics">
+        <article class="proj-card">
+          <p class="proj-flag">Flagship project</p>
+          <div class="proj-media">
+            <video class="proj-video" id="thesisVideo"
                    autoplay muted loop playsinline preload="metadata"
                    poster="assets/img/uav-poster.png"
                    width="1200" height="750"
@@ -301,16 +300,16 @@
               <source src="assets/video/uav-demo.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="tl-body">
-            <p class="tl-meta"><span class="tl-lead">Undergraduate thesis</span> &middot; Apr 2025 to Jun 2026</p>
+          <div class="proj-body">
+            <p class="proj-meta"><span class="proj-lead">Undergraduate thesis</span></p>
             <h3>Autonomous Indoor UAV with SLAM and Thermal Surveying</h3>
-            <p class="tl-hook">The project I would want to be judged on.</p>
+            <p class="proj-hook">The project I would want to be judged on.</p>
             <p>An autonomous quadcopter for GPS denied indoor flight, designed and assembled from
                scratch, with LiDAR SLAM, optical flow stabilisation and onboard thermal imaging
                feeding a live survey. Built end to end, from the airframe and sensor integration
                to the ROS&nbsp;2 and PX4 stack that flies it.</p>
             <ul class="chips sm"><li>ROS 2</li><li>PX4</li><li>Nav2</li><li>slam-toolbox</li><li>Gazebo</li><li>MAVLink</li><li>Pixhawk 6C</li></ul>
-            <p class="tl-links">
+            <p class="proj-links">
               <a href="https://drive.google.com/file/d/1je-og2tN93wE13JT9YaWHDui7SlkzIIq/view?usp=sharing" target="_blank" rel="noopener">Thesis book</a>
               <a href="https://drive.google.com/file/d/1Ey1UU40EU9y6pPJglhoveMlVFrcQvNYr/view?usp=sharing" target="_blank" rel="noopener">Full demo video</a>
             </p>
@@ -318,41 +317,76 @@
         </article>
       </li>
 
-      <li class="tl-item reveal" data-tags="mechanical">
-        <p class="tl-year"><span>2025</span></p>
-        <article class="tl-card">
-          <div class="tl-media">
-            <img src="assets/img/heatexchanger.svg" alt="Compact louvered fin heat exchanger for two wheelers" width="1200" height="750" loading="lazy" decoding="async">
+      <li class="proj reveal" data-tags="ai">
+        <article class="proj-card is-featured">
+          <div class="proj-media">
+            <img src="assets/img/dlsprint.svg" alt="DL Sprint Bengali document layout analysis" width="1200" height="750" loading="lazy" decoding="async">
           </div>
-          <div class="tl-body">
-            <p class="tl-meta"><span class="tl-lead">Thermo fluid system design</span> &middot; Sep 2024 to Mar 2025</p>
+          <div class="proj-body">
+            <p class="proj-meta"><span class="proj-lead">BUET CSE Fest</span> &middot; <span class="proj-award">BUET Rising Team</span></p>
+            <h3>DL Sprint 2.0, Bengali Document Layout Analysis</h3>
+            <p>A deep learning competition on segmenting and classifying regions of Bengali
+               document images. Our approach and results were written up as a paper and presented
+               at the festival.</p>
+            <ul class="chips sm"><li>Deep learning</li><li>Computer vision</li><li>Segmentation</li><li>Python</li></ul>
+            <p class="proj-links">
+              <a href="https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing" target="_blank" rel="noopener">Presented paper</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+      <li class="proj reveal" data-tags="ai games">
+        <article class="proj-card">
+          <div class="proj-media">
+            <img src="assets/img/aicontest.svg" alt="Steal the Flag competitive game AI agent" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="proj-body">
+            <p class="proj-meta"><span class="proj-lead">BUET CSE Fest AI Contest</span> &middot; <span class="proj-award">5th place</span></p>
+            <h3>Steal the Flag, Game AI Agent</h3>
+            <p>A competitive bot for an adversarial capture the flag arena: strategy, pathfinding
+               and heuristics tuned across rounds of head to head matches against other teams.</p>
+            <ul class="chips sm"><li>Game AI</li><li>Pathfinding</li><li>Heuristics</li></ul>
+            <p class="proj-links">
+              <a href="https://github.com/mashmahmood/codinggame_stealtheflag" target="_blank" rel="noopener">Source on GitHub</a>
+            </p>
+          </div>
+        </article>
+      </li>
+
+      <li class="proj reveal" data-tags="mechanical">
+        <article class="proj-card">
+          <div class="proj-media">
+            <img src="assets/img/heatexchanger.webp" alt="Compact louvered fin heat exchanger for two wheelers" width="1200" height="750" loading="lazy" decoding="async">
+          </div>
+          <div class="proj-body">
+            <p class="proj-meta"><span class="proj-lead">Thermo fluid system design</span></p>
             <h3>Compact Heat Exchanger for Two Wheelers</h3>
             <p>Flat tubes and triangular louvered fins that outperform the conventional design on
                heat transfer. A Python optimiser searched fin and tube geometry to cut weight
                while holding performance, and the winning design was manufactured and pressure
                tested.</p>
             <ul class="chips sm"><li>Python</li><li>Thermal design</li><li>Optimisation</li><li>Laser cutting</li></ul>
-            <p class="tl-links">
+            <p class="proj-links">
               <a href="https://drive.google.com/file/d/1qZ2tPLo2bX1O4M4IzsQ0tO_CYrqdp-Rn/view?usp=sharing" target="_blank" rel="noopener">Report</a>
             </p>
           </div>
         </article>
       </li>
 
-      <li class="tl-item reveal" data-tags="robotics mechanical">
-        <p class="tl-year"><span>2024</span></p>
-        <article class="tl-card">
-          <div class="tl-media">
+      <li class="proj reveal" data-tags="robotics mechanical">
+        <article class="proj-card">
+          <div class="proj-media">
             <img src="assets/img/buckling.svg" alt="Automated buckling load test rig" width="1200" height="750" loading="lazy" decoding="async">
           </div>
-          <div class="tl-body">
-            <p class="tl-meta"><span class="tl-lead">Electro mechanical system design</span> &middot; Nov 2023 to Mar 2024</p>
+          <div class="proj-body">
+            <p class="proj-meta"><span class="proj-lead">Electro mechanical system design</span></p>
             <h3>Automated Buckling Load Determination</h3>
             <p>A rig that finds the critical buckling load of a slender column on its own:
                hydraulic actuation under Arduino control, with a real time detection algorithm
                calling the buckling point live instead of by eye.</p>
             <ul class="chips sm"><li>Arduino Mega</li><li>Load cell + HX711</li><li>Hydraulics</li><li>Control</li></ul>
-            <p class="tl-links">
+            <p class="proj-links">
               <a href="https://drive.google.com/file/d/1Z4xrh70JVJ79gZ57j2d0oMXJqUDwjnv1/view?usp=sharing" target="_blank" rel="noopener">Poster</a>
               <a href="https://youtu.be/QeiWl80-ftg" target="_blank" rel="noopener">Overview</a>
               <a href="https://youtu.be/Pe4uGSBcJqo" target="_blank" rel="noopener">Guide</a>
@@ -361,66 +395,26 @@
         </article>
       </li>
 
-      <li class="tl-item reveal" data-tags="ai">
-        <p class="tl-year"><span>2023</span></p>
-        <article class="tl-card is-featured">
-          <div class="tl-media">
-            <img src="assets/img/dlsprint.svg" alt="DL Sprint Bengali document layout analysis" width="1200" height="750" loading="lazy" decoding="async">
-          </div>
-          <div class="tl-body">
-            <p class="tl-meta"><span class="tl-lead">BUET CSE Fest</span> &middot; 2023 &middot; <span class="tl-award">BUET Rising Team</span></p>
-            <h3>DL Sprint 2.0, Bengali Document Layout Analysis</h3>
-            <p>A deep learning competition on segmenting and classifying regions of Bengali
-               document images. Our approach and results were written up as a paper and presented
-               at the festival.</p>
-            <ul class="chips sm"><li>Deep learning</li><li>Computer vision</li><li>Segmentation</li><li>Python</li></ul>
-            <p class="tl-links">
-              <a href="https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing" target="_blank" rel="noopener">Presented paper</a>
-            </p>
-          </div>
-        </article>
-      </li>
-
-      <li class="tl-item reveal" data-tags="games">
-        <p class="tl-year"><span>2023</span></p>
-        <article class="tl-card">
-          <div class="tl-media">
+      <li class="proj reveal" data-tags="games">
+        <article class="proj-card">
+          <div class="proj-media">
             <img src="assets/img/simulator.svg" alt="BRTA manual transmission driver training simulator" width="1200" height="750" loading="lazy" decoding="async">
           </div>
-          <div class="tl-body">
-            <p class="tl-meta"><span class="tl-lead">Unity</span> &middot; Contributor</p>
+          <div class="proj-body">
+            <p class="proj-meta"><span class="proj-lead">Unity</span> &middot; Contributor</p>
             <h3>BRTA Driver Training Simulator</h3>
             <p>A manual transmission driver training simulator built in Unity, with Logitech
                steering wheel and gear shifter peripherals wired in so the vehicle handles the way
                a real one does.</p>
             <ul class="chips sm"><li>Unity</li><li>C#</li><li>Vehicle physics</li><li>Hardware I/O</li></ul>
-            <p class="tl-links">
+            <p class="proj-links">
               <a href="https://drive.google.com/file/d/1_D9t0WSmSG-gKEQoYqpyvuMCEqEKiS3M/view?usp=sharing" target="_blank" rel="noopener">Demo video</a>
             </p>
           </div>
         </article>
       </li>
 
-      <li class="tl-item reveal" data-tags="ai games">
-        <p class="tl-year"><span>2022</span></p>
-        <article class="tl-card">
-          <div class="tl-media">
-            <img src="assets/img/aicontest.svg" alt="Steal the Flag competitive game AI agent" width="1200" height="750" loading="lazy" decoding="async">
-          </div>
-          <div class="tl-body">
-            <p class="tl-meta"><span class="tl-lead">BUET CSE Fest AI Contest</span> &middot; 2022 &middot; <span class="tl-award">5th place</span></p>
-            <h3>Steal the Flag, Game AI Agent</h3>
-            <p>A competitive bot for an adversarial capture the flag arena: strategy, pathfinding
-               and heuristics tuned across rounds of head to head matches against other teams.</p>
-            <ul class="chips sm"><li>Game AI</li><li>Pathfinding</li><li>Heuristics</li></ul>
-            <p class="tl-links">
-              <a href="https://github.com/mashmahmood/codinggame_stealtheflag" target="_blank" rel="noopener">Source on GitHub</a>
-            </p>
-          </div>
-        </article>
-      </li>
-
-    </ol>
+    </ul>
   </div>
 </section>
 
@@ -500,6 +494,117 @@
            coordinating between students and faculty.</p>
       </article>
     </div>
+
+    <div class="gal-head reveal">
+      <h3 class="sub-head">Highlights</h3>
+      <div class="gal-ctrl">
+        <button type="button" class="gal-btn" data-gal-dir="-1"
+                aria-controls="galTrack" aria-label="Scroll highlights left">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="M15 4 7 12l8 8"/></svg>
+        </button>
+        <button type="button" class="gal-btn" data-gal-dir="1"
+                aria-controls="galTrack" aria-label="Scroll highlights right">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="m9 4 8 8-8 8"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="gal reveal" id="gal">
+      <ul class="gal-track" id="galTrack" tabindex="0"
+          aria-label="Highlights, a horizontally scrollable gallery">
+        <li>
+          <figure class="gal-item">
+            <button class="gal-shot" type="button"
+                    data-full="assets/img/highlights/icpc-dhaka.svg"
+                    data-caption="ICPC Dhaka Regional, 40th of 311 teams"
+                    aria-label="Open a larger view: ICPC Dhaka Regional">
+              <img src="assets/img/highlights/icpc-dhaka.svg" alt="Our team at the ICPC Dhaka Regional 2025"
+                   width="1200" height="800" loading="lazy" decoding="async">
+            </button>
+            <figcaption>
+              <span class="gal-title">ICPC Dhaka Regional</span>
+              <span class="gal-sub">40th of 311 teams</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="gal-item">
+            <button class="gal-shot" type="button"
+                    data-full="assets/img/highlights/dl-sprint.svg"
+                    data-caption="DL Sprint 2.0, BUET CSE Fest, paper presented"
+                    aria-label="Open a larger view: DL Sprint 2.0">
+              <img src="assets/img/highlights/dl-sprint.svg" alt="Presenting the DL Sprint 2.0 paper at BUET CSE Fest"
+                   width="1200" height="800" loading="lazy" decoding="async">
+            </button>
+            <figcaption>
+              <span class="gal-title">DL Sprint 2.0</span>
+              <span class="gal-sub">BUET CSE Fest, paper presented</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="gal-item">
+            <button class="gal-shot" type="button"
+                    data-full="assets/img/highlights/game-jam.svg"
+                    data-caption="IEEE CS Game Jam, 96 hours, Best BUET Junior Team"
+                    aria-label="Open a larger view: IEEE CS Game Jam">
+              <img src="assets/img/highlights/game-jam.svg" alt="The team during the 96 hour IEEE CS Game Jam"
+                   width="1200" height="800" loading="lazy" decoding="async">
+            </button>
+            <figcaption>
+              <span class="gal-title">IEEE CS Game Jam</span>
+              <span class="gal-sub">96 hours, Best BUET Junior Team</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="gal-item">
+            <button class="gal-shot" type="button"
+                    data-full="assets/img/highlights/math-camp.svg"
+                    data-caption="National Math Camp, Math Olympiad winner"
+                    aria-label="Open a larger view: National Math Camp">
+              <img src="assets/img/highlights/math-camp.svg" alt="At the National Math Camp after the Math Olympiad"
+                   width="1200" height="800" loading="lazy" decoding="async">
+            </button>
+            <figcaption>
+              <span class="gal-title">National Math Camp</span>
+              <span class="gal-sub">Math Olympiad winner</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="gal-item">
+            <button class="gal-shot" type="button"
+                    data-full="assets/img/highlights/math-mania.svg"
+                    data-caption="Josephite Math Mania, Club flagship event"
+                    aria-label="Open a larger view: Josephite Math Mania">
+              <img src="assets/img/highlights/math-mania.svg" alt="Running Josephite Math Mania as club president"
+                   width="1200" height="800" loading="lazy" decoding="async">
+            </button>
+            <figcaption>
+              <span class="gal-title">Josephite Math Mania</span>
+              <span class="gal-sub">Club flagship event</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="gal-item">
+            <button class="gal-shot" type="button"
+                    data-full="assets/img/highlights/summation.svg"
+                    data-caption="Summation, Annual magazine, layout and design"
+                    aria-label="Open a larger view: Summation">
+              <img src="assets/img/highlights/summation.svg" alt="Spread from Summation, the club's annual magazine"
+                   width="1200" height="800" loading="lazy" decoding="async">
+            </button>
+            <figcaption>
+              <span class="gal-title">Summation</span>
+              <span class="gal-sub">Annual magazine, layout and design</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+      <p class="gal-hint">Scroll or drag sideways for more.</p>
+    </div>
   </div>
 </section>
 
@@ -557,6 +662,21 @@
     <p>Hand written HTML, CSS and JavaScript. No frameworks.</p>
   </div>
 </footer>
+
+<!-- lightweight lightbox for the Highlights gallery -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged highlight" hidden>
+  <button type="button" class="lb-close" id="lbClose" aria-label="Close the enlarged view">&times;</button>
+  <button type="button" class="lb-nav lb-prev" data-lb-dir="-1" aria-label="Previous highlight">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="M15 4 7 12l8 8"/></svg>
+  </button>
+  <figure class="lb-figure">
+    <img class="lb-img" id="lbImg" alt="">
+    <figcaption class="lb-cap" id="lbCap"></figcaption>
+  </figure>
+  <button type="button" class="lb-nav lb-next" data-lb-dir="1" aria-label="Next highlight">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="m9 4 8 8-8 8"/></svg>
+  </button>
+</div>
 
 <script src="main.js" defer></script>
 </body>
