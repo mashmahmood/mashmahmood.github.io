@@ -138,6 +138,25 @@ projects:
         url: https://youtu.be/KSZB9LvfkQg
       - label: GitHub
         url: https://github.com/mashmahmood/ws_offboard_control
+  
+  - title: Automated Buckling Load Determination
+    tags: [robotics, mechanical]
+    lead: Electro mechanical system design
+    image: assets/img/buckling.webp
+    alt: Automated buckling load test rig
+    text: >-
+      A rig that finds the critical buckling load of a slender column on its own:
+      hydraulic actuation under Arduino control, with a real time detection algorithm
+      calling the buckling point live instead of by eye.
+    chips: [Arduino Mega, Load cell + HX711, Hydraulics, Control]
+    links:
+      - label: Poster
+        url: https://drive.google.com/file/d/1Z4xrh70JVJ79gZ57j2d0oMXJqUDwjnv1/view?usp=sharing
+      - label: Overview
+        url: https://youtu.be/QeiWl80-ftg
+      - label: Guide
+        url: https://youtu.be/Pe4uGSBcJqo
+
 
   - title: DL Sprint 2.0, Bengali Document Layout Analysis
     tags: [ai]
@@ -182,24 +201,6 @@ projects:
     links:
       - label: Report
         url: https://drive.google.com/file/d/1qZ2tPLo2bX1O4M4IzsQ0tO_CYrqdp-Rn/view?usp=sharing
-
-  - title: Automated Buckling Load Determination
-    tags: [robotics, mechanical]
-    lead: Electro mechanical system design
-    image: assets/img/buckling.webp
-    alt: Automated buckling load test rig
-    text: >-
-      A rig that finds the critical buckling load of a slender column on its own:
-      hydraulic actuation under Arduino control, with a real time detection algorithm
-      calling the buckling point live instead of by eye.
-    chips: [Arduino Mega, Load cell + HX711, Hydraulics, Control]
-    links:
-      - label: Poster
-        url: https://drive.google.com/file/d/1Z4xrh70JVJ79gZ57j2d0oMXJqUDwjnv1/view?usp=sharing
-      - label: Overview
-        url: https://youtu.be/QeiWl80-ftg
-      - label: Guide
-        url: https://youtu.be/Pe4uGSBcJqo
 
   - title: BRTA Driver Training Simulator
     tags: [games]
