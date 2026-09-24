@@ -1,61 +1,56 @@
 # assets/video
 
-The thesis card on the home page plays an inline, muted, looping clip. It looks for these
-two files, in this order, and falls back to `assets/img/uav-poster.png` when neither is
-present:
+The thesis card on the home page plays an inline, muted, looping clip:
 
 ```
-uav-demo.webm    preferred, smaller for the same quality
-uav-demo.mp4     fallback, plays everywhere including older Safari
+uav-demo.mp4     the clip the page plays
 ```
+
+One file is enough: H.264 in an MP4 container plays in every current browser, including
+Safari. A second WebM copy used to be the workaround for old Safari, and VP9 is sometimes
+smaller, but for this footage it came out larger, so it was dropped.
+
+The page falls back to `assets/img/uav-poster.png` whenever the clip is missing.
+The file it looks for is set in `_data/content.yml`, under the thesis project's `video:`.
 
 ## What the clip should be
 
 | | |
 |:--|:--|
 | Length | 8 to 15 seconds, cut so it loops without a jarring jump |
-| Resolution | 1280x720 is plenty; the card renders it around 700px wide |
+| Aspect ratio | 16:10. The card crops anything else from the centre |
+| Resolution | 1280x800, about twice the size it is displayed at |
 | Frame rate | 24 or 30 fps |
 | Audio | none at all, strip the track (it is muted anyway, and it saves bytes) |
 | Target size | under 3 MB, ideally 1 to 2 MB |
 
-Keep it well under the GitHub limits: 100 MB per file is a hard block and repositories
-are meant to stay under about 1 GB.
-
 ## Encoding with ffmpeg
 
-Start from your source clip, trim it, then run both encodes:
+From a source clip that is already 16:10 (`ffmpeg` installs with
+`winget install Gyan.FFmpeg`):
 
 ```bash
-# 1. trim: 12 seconds starting at 00:00:34, no audio
-ffmpeg -ss 00:00:34 -t 12 -i source.mp4 -an -c:v copy trimmed.mp4
-
-# 2. MP4 (H.264). yuv420p and faststart are what make it play everywhere.
-ffmpeg -i trimmed.mp4 -an -vf "scale=1280:-2,fps=30" \
+ffmpeg -i source.mp4 -an -vf "scale=1280:800,fps=30" \
   -c:v libx264 -profile:v main -pix_fmt yuv420p -crf 26 -preset slow \
   -movflags +faststart uav-demo.mp4
-
-# 3. WebM (VP9), usually 25 to 40 percent smaller
-ffmpeg -i trimmed.mp4 -an -vf "scale=1280:-2,fps=30" \
-  -c:v libvpx-vp9 -crf 34 -b:v 0 -row-mt 1 uav-demo.webm
 ```
 
-Raise `-crf` to shrink the file, lower it for more quality. Check the result:
+Raise `-crf` to shrink the file, lower it for more quality. To trim first, put
+`-ss 00:00:34 -t 12` before `-i`. If the source is 16:9, crop it to 16:10 in the same
+pass by making the filter `crop=ih*16/10:ih,scale=1280:800,fps=30`.
 
-```bash
-ls -lh uav-demo.*
-```
-
-If the MP4 lands over 3 MB, try `-crf 30`, drop to `scale=960:-2`, or shorten the clip.
+Keep it well under the GitHub limits: 100 MB per file is a hard block and repositories
+are meant to stay under about 1 GB. Source footage stays out of the repo; `.gitignore`
+already excludes `short.mp4`.
 
 ## Poster frame
 
-`assets/img/uav-poster.png` is the still shown before the video loads and whenever the
-files are missing. Replace it with a real frame from the clip once you have one:
+`assets/img/uav-poster.png` is the still shown before the clip loads and whenever it is
+missing. It is pixel art rather than a real frame. To use a real one instead:
 
 ```bash
 ffmpeg -ss 00:00:02 -i uav-demo.mp4 -frames:v 1 -q:v 2 ../img/uav-poster.jpg
 ```
 
-If you switch to a `.jpg`, update the `poster` attribute on the `<video>` in `index.html`.
-Keep the poster the same aspect ratio as the clip so nothing shifts on load.
+Then point `poster:` in `_data/content.yml` at the new file. Keep the poster at 16:10 so
+nothing shifts on load.

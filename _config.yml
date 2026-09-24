@@ -1,0 +1,10 @@
+# GitHub Pages builds this site with Jekyll on every push to main.
+# index.html reads its content from _data/content.yml.
+
+title: Mashrur Mahmood
+url: https://mashmahmood.github.io
+
+exclude:
+  - README.md
+  - assets/video/README.md
+  - assets/video/short.mp4

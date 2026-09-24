@@ -1,0 +1,314 @@
+# ---------------------------------------------------------------------------
+#  All the words on the portfolio live here. index.html is only the layout.
+#
+#  GitHub Pages rebuilds the page from this file on every push to main.
+#
+#  Two kinds of text fields:
+#    * plain fields (titles, chips, captions, alt text) are escaped for you,
+#      so write "AI & ML" normally.
+#    * fields marked "HTML ok" go in as written, so they may hold tags like
+#      <em>, <a href="..."> or &nbsp;. Write a literal & there as &amp;.
+#
+#  Quote any value that contains a colon followed by a space, or that starts
+#  with a special character such as * & ! [ { > | # @ `
+# ---------------------------------------------------------------------------
+
+name: Mashrur Mahmood
+first_name: Mashrur
+last_name: Mahmood
+email: mashrur.mahmood@gmail.com
+resume: Mashrur_Resume.pdf
+
+# Profile links. The icon for each comes from _includes/icon.html, keyed by id.
+# cp: true also shows the link in the competitive programming block.
+profiles:
+  - id: github
+    label: GitHub
+    url: https://github.com/mashmahmood
+  - id: linkedin
+    label: LinkedIn
+    url: https://www.linkedin.com/in/mashrur-mahmood/
+  - id: codeforces
+    label: Codeforces
+    url: https://codeforces.com/profile/iamashrur
+    cp: true
+  - id: leetcode
+    label: LeetCode
+    url: https://leetcode.com/u/mashrur/
+    cp: true
+
+hero:
+  welcome: Welcome to my portfolio
+
+# =============================== 01 / ABOUT ================================
+about:
+  heading: Brief Introduction
+  portrait: assets/img/portrait.webp
+  portrait_alt: Portrait of Mashrur Mahmood
+  paragraphs:                                   # HTML ok
+    - >-
+      I am a Mechanical Engineering graduate from BUET, based in Dhaka,
+      with interests spanning robotics, automation and software development.
+    - >-
+      I enjoy working on problems that require both technical depth and practical thinking.
+      Through engineering projects, competitive programming, and software development,
+      I have had the opportunity to work across different areas and learn how to approach problems
+      from multiple perspectives. I value collaboration and enjoy both contributing as part of a
+      team and taking responsibility when needed.
+    - >-
+      Outside of engineering, I enjoy films, series, and reading.
+      I also have a strong interest in design and visual work,
+      which often influences how I approach the projects I build.
+  interests: [Movies, Series, Books, Design, Anime, Games]
+  now: >-                                        # HTML ok
+    I am currently working on cloud-based products, applying DevOps practices and
+    exploring the integration of AI, machine learning, and deep learning into practical applications.
+
+# where and note: HTML ok
+education:
+  - when: Nov 2021 to Jun 2026
+    title: BSc in Mechanical Engineering
+    where: Bangladesh University of Engineering and Technology, Dhaka
+    note: CGPA 3.67 / 4.00. University Merit Stipend across three terms.
+  - when: Mar 2025
+    title: Industrial Attachment, United Ashuganj Energy Ltd.
+    where: 195&nbsp;MW combined cycle gas engine power plant, Ashuganj
+    note: >-
+      A 13 day training programme across plant operations, covering gas engines, HRSGs, steam
+      turbines and substations, with time at the DCS and SCADA desks.
+    link:
+      label: Training report
+      url: https://drive.google.com/file/d/1FGOMm-W1k0tzop3Tp_RQ-_Vlo7KT0Nnw/view?usp=sharing
+  - when: "2020"
+    title: Higher Secondary Certificate, Science
+    where: Saint Joseph Higher Secondary School, Dhaka
+    note: GPA 5.00 / 5.00.
+
+skills:
+  - group: Languages
+    items: [Python, C / C++, "C#", JavaScript, Java]
+  - group: AI & Machine Learning
+    items: [Deep learning, Computer vision, Agentic AI, MCP, LLM tooling, NumPy, pandas]
+  - group: Robotics & Embedded
+    items: [ROS 2, PX4, Nav2, slam-toolbox, Gazebo, MAVLink, Pixhawk, Raspberry Pi, Arduino, LiDAR]
+  - group: Software & Cloud
+    items: [Git, Docker, AWS, Azure, Linux, Node.js, React]
+  - group: Simulation & Design
+    items: [Unity, Godot, SolidWorks, Adobe CC]
+
+# ============================= 02 / PROJECTS ===============================
+projects_heading: Things I have built
+
+# The filter buttons. Each project's tags must use these keys.
+filters:
+  - key: ai
+    label: AI & ML
+  - key: robotics
+    label: Robotics
+  - key: mechanical
+    label: Mechanical
+  - key: games
+    label: Games
+
+# Order here is the order on the page.
+#   spotlight: true   full width card, media beside the text (the thesis)
+#   featured: true    gradient bar on top of the card
+#   video / poster    use instead of image for an inline muted loop
+#   lead, award       the small line above the title; role adds plain text
+projects:
+  - title: Autonomous Indoor UAV with SLAM and Thermal Surveying
+    tags: [ai, robotics]
+    spotlight: true
+    featured: true
+    lead: Undergraduate thesis
+    video:
+      mp4: assets/video/uav-demo.mp4
+      poster: assets/img/uav-poster.webp
+      label: Short clip of the autonomous indoor UAV in flight
+    text: >-                                     # HTML ok
+      An autonomous quadcopter for GPS denied indoor flight, designed and assembled from
+      scratch, with LiDAR SLAM, optical flow stabilisation and onboard thermal imaging
+      feeding a live survey. Built end to end, from the airframe and sensor integration
+      to the ROS&nbsp;2 and PX4 stack that flies it.
+    chips: [ROS 2, PX4, Nav2, slam-toolbox, Gazebo, MAVLink, Pixhawk 6C]
+    links:
+      - label: Thesis book
+        url: https://drive.google.com/file/d/1je-og2tN93wE13JT9YaWHDui7SlkzIIq/view?usp=sharing
+      - label: Full demo video
+        url: https://youtu.be/KSZB9LvfkQg
+      - label: GitHub
+        url: https://github.com/mashmahmood/ws_offboard_control
+
+  - title: DL Sprint 2.0, Bengali Document Layout Analysis
+    tags: [ai]
+    lead: BUET CSE Fest
+    award: BUET Rising Team
+    image: assets/img/dlsprint.webp
+    alt: DL Sprint Bengali document layout analysis
+    text: >-
+      A deep learning competition on segmenting and classifying regions of Bengali
+      document images. Our approach and results were written up as a paper and presented
+      at the festival.
+    chips: [Deep learning, Computer vision, Segmentation, Python]
+    links:
+      - label: Presented paper
+        url: https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing
+
+  - title: Steal the Flag, Game AI Agent
+    tags: [ai, games]
+    lead: BUET CSE Fest AI Contest
+    award: 5th place
+    image: assets/img/aicontest.webp
+    alt: Steal the Flag competitive game AI agent
+    text: >-
+      A competitive bot for an adversarial capture the flag arena: strategy, pathfinding
+      and heuristics tuned across rounds of head to head matches against other teams.
+    chips: [Game AI, Pathfinding, Heuristics]
+    links:
+      - label: Source on GitHub
+        url: https://github.com/mashmahmood/codinggame_stealtheflag
+
+  - title: Compact Heat Exchanger for Two Wheelers
+    tags: [mechanical]
+    lead: Thermo fluid system design
+    image: assets/img/heatexchanger.webp
+    alt: Compact louvered fin heat exchanger for two wheelers
+    text: >-
+      Flat tubes and triangular louvered fins that outperform the conventional design on
+      heat transfer. A Python optimiser searched fin and tube geometry to cut weight
+      while holding performance, and the winning design was manufactured and pressure
+      tested.
+    chips: [Python, Thermal design, Optimisation, Laser cutting]
+    links:
+      - label: Report
+        url: https://drive.google.com/file/d/1qZ2tPLo2bX1O4M4IzsQ0tO_CYrqdp-Rn/view?usp=sharing
+
+  - title: Automated Buckling Load Determination
+    tags: [robotics, mechanical]
+    lead: Electro mechanical system design
+    image: assets/img/buckling.webp
+    alt: Automated buckling load test rig
+    text: >-
+      A rig that finds the critical buckling load of a slender column on its own:
+      hydraulic actuation under Arduino control, with a real time detection algorithm
+      calling the buckling point live instead of by eye.
+    chips: [Arduino Mega, Load cell + HX711, Hydraulics, Control]
+    links:
+      - label: Poster
+        url: https://drive.google.com/file/d/1Z4xrh70JVJ79gZ57j2d0oMXJqUDwjnv1/view?usp=sharing
+      - label: Overview
+        url: https://youtu.be/QeiWl80-ftg
+      - label: Guide
+        url: https://youtu.be/Pe4uGSBcJqo
+
+  - title: BRTA Driver Training Simulator
+    tags: [games]
+    lead: Unity
+    role: Contributor
+    image: assets/img/simulator.webp
+    alt: BRTA manual transmission driver training simulator
+    text: >-
+      A manual transmission driver training simulator built in Unity, with Logitech
+      steering wheel and gear shifter peripherals wired in so the vehicle handles the way
+      a real one does.
+    chips: [Unity, "C#", Vehicle physics, Hardware I/O]
+    links:
+      - label: Demo video
+        url: https://drive.google.com/file/d/1_D9t0WSmSG-gKEQoYqpyvuMCEqEKiS3M/view?usp=sharing
+
+# ========================== 03 / ECA & AWARDS ==============================
+eca_heading: Extracurricular Engagement
+
+# Numbers with count: animate up from zero when they scroll into view.
+#   value      big text          (or count: a number that animates)
+#   suffix     after the number  ("+")
+#   sub        small text after  ("/311")
+#   label      caption; label_count appends an animated number to it
+cp_stats:
+  - value: Expert
+    label: Codeforces title, max rating
+    label_count: 1739
+  - count: 500
+    suffix: "+"
+    label: Problems solved across platforms
+  - count: 40
+    sub: /311
+    label: ICPC Dhaka Regional 2025, honourable mention
+
+cp_text: >-                                      # HTML ok
+  Contests from school level through university, including IOI selection contests, IUPCs and
+  the ICPC, across a wide range of data structures and algorithms.
+
+awards:
+  - year: "2025"
+    title: Honourable Mention, ICPC Dhaka Regional.
+    note: 40th of 311 teams.
+  - year: "2023"
+    title: BUET Rising Team, DL Sprint 2.0.
+    note: Bengali document layout analysis at BUET CSE Fest.
+  - year: "2023"
+    title: Best BUET Junior Team, IEEE CS Game Jam.
+    note: 96 hours, more than 30 competing teams.
+  - year: "2022"
+    title: 5th place, AI Contest, BUET CSE Fest.
+    note: Adversarial game AI agent.
+  - year: "2022"
+    title: University Merit Stipend, BUET.
+    note: Awarded across three terms.
+  - year: "2018"
+    title: Winner, National Math Olympiad.
+    note: Participant at the National Math Camp.
+
+activities:
+  - title: Game development
+    text: >-                                     # HTML ok
+      Several Unity 3D projects including Android releases, plus a 96 hour game jam run both
+      online and on site, where our team took Best BUET Junior Team out of more than 30
+      entries.
+  - title: President, Josephite Math Club
+    when: 2019 to 2020
+    text: >-
+      Ran the club's flagship event, Josephite Math Mania, end to end. Coordinated seminars,
+      led member collaboration and delegation, and produced the annual magazine
+      <em>Summation</em> including its layout and visual design.
+  - title: Class Representative, BUET
+    when: 2025 to 2026
+    text: >-
+      Elected representative for my batch in the Department of Mechanical Engineering,
+      coordinating between students and faculty.
+
+# The strip shows only the title. The caption appears under the photo once
+# it is opened in the lightbox. full is optional: a larger file for the
+# lightbox, otherwise image is used for both.
+highlights:
+  - title: IEEE CS Game Jam, BUET CSE Fest 2023
+    caption: Awarded Best BUET Junior Team
+    image: assets/img/highlights/game-jam-2.webp
+    alt: IEEE CS Game Jam Award
+  - title: Game Jam Onsite
+    caption: During Judgement of Onsite Contest
+    image: assets/img/highlights/game-jam-1.webp
+    alt: The team during the 96 hour IEEE CS Game Jam
+  - title: Josephite Math Mania
+    caption: Receiving Crest from Dr. Mohammad Kaykobad for Serving as President of Josephite Math Club
+    image: assets/img/highlights/math-mania.webp
+    alt: Receiving Crest of President
+  - title: Closing Speech
+    caption: Delivering Speech at the Closing Ceremony
+    image: assets/img/highlights/speech.webp
+    alt: Speech at Josephite Math Mania
+  - title: Dr. Jamilur Reza Chowdhury
+    caption: Interviewing Sir for Annual Magazine "Summation" of Josephite Math Club
+    image: assets/img/highlights/jamilur-reza-sir.webp
+    alt: Interview of Jamilur Reza Sir
+  - title: National Math Camp 2018
+    caption: Receiving Participation Certificate
+    image: assets/img/highlights/math-camp.webp
+    alt: Receiving Participation Certificate of Math Camp
+
+# ============================== 04 / CONTACT ===============================
+contact:
+  heading: Say hello
+  lede: >-                                       # HTML ok
+    Open to roles and collaborations in AI and machine learning, software engineering, robotics,
+    and autonomous systems. Email is the fastest way to reach me.

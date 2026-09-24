@@ -1,3 +1,7 @@
+---
+# Layout only. The words live in _data/content.yml.
+---
+{%- assign c = site.data.content -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +53,7 @@
       "givenName": "Mashrur",
       "familyName": "Mahmood",
       "url": "https://mashmahmood.github.io/",
-      "email": "mailto:mashrur.mahmood@gmail.com",
+      "email": "mailto:{{ c.email }}",
       "jobTitle": "Robotics and AI Engineer",
       "description": "Mechanical engineering graduate working across robotics, autonomous systems, applied machine learning and software.",
       "alumniOf": {
@@ -68,10 +72,9 @@
         "Embedded Systems"
       ],
       "sameAs": [
-        "https://github.com/mashmahmood",
-        "https://www.linkedin.com/in/mashrur-mahmood/",
-        "https://codeforces.com/profile/iamashrur",
-        "https://leetcode.com/u/mashrur/"
+        {%- for p in c.profiles %}
+        {{ p.url | jsonify }}{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
       ]
     },
     {
@@ -101,7 +104,7 @@
         <span></span><span></span><span></span>
         <span></span><span></span><span></span>
       </span>
-      <span class="brand-name">Mashrur Mahmood</span>
+      <span class="brand-name">{{ c.name | escape }}</span>
     </a>
 
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu">
@@ -113,7 +116,7 @@
       <a href="#projects"><i>02</i>Projects</a>
       <a href="#eca"><i>03</i>ECA &amp; Awards</a>
       <a href="#contact"><i>04</i>Contact</a>
-      <a class="nav-resume" href="Mashrur_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="nav-resume" href="{{ c.resume }}" target="_blank" rel="noopener">Resume</a>
     </nav>
   </div>
 </header>
@@ -126,41 +129,28 @@
   <div class="hero-glow" aria-hidden="true"></div>
 
   <div class="wrap hero-inner">
-    <p class="hero-welcome reveal">Welcome to my portfolio</p>
+    <p class="hero-welcome reveal">{{ c.hero.welcome | escape }}</p>
     <h1 class="hero-title">
-      <span class="hero-line reveal">Mashrur</span>
-      <span class="hero-line reveal">Mahmood<span class="caret" aria-hidden="true"></span></span>
+      <span class="hero-line reveal">{{ c.first_name | escape }}</span>
+      <span class="hero-line reveal">{{ c.last_name | escape }}<span class="caret" aria-hidden="true"></span></span>
     </h1>
 
     <ul class="social reveal" aria-label="Profiles and contact">
+      {%- for p in c.profiles %}
       <li>
-        <a href="https://github.com/mashmahmood" target="_blank" rel="noopener me" aria-label="GitHub profile" data-tip="GitHub">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <a href="{{ p.url }}" target="_blank" rel="noopener me" aria-label="{{ p.label | escape }} profile" data-tip="{{ p.label | escape }}">
+          {% include icon.html name=p.id %}
         </a>
       </li>
+      {%- endfor %}
       <li>
-        <a href="https://www.linkedin.com/in/mashrur-mahmood/" target="_blank" rel="noopener me" aria-label="LinkedIn profile" data-tip="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-        </a>
-      </li>
-      <li>
-        <a href="https://codeforces.com/profile/iamashrur" target="_blank" rel="noopener me" aria-label="Codeforces profile" data-tip="Codeforces">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 7.5A1.5 1.5 0 0 1 6 9v10.5A1.5 1.5 0 0 1 4.5 21h-3C.673 21 0 20.328 0 19.5V9c0-.828.673-1.5 1.5-1.5h3zm9-4.5A1.5 1.5 0 0 1 15 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5v-15A1.5 1.5 0 0 1 10.5 3h3zm9 7.5A1.5 1.5 0 0 1 24 12v7.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 18 19.5V12a1.5 1.5 0 0 1 1.5-1.5h3z"/></svg>
-        </a>
-      </li>
-      <li>
-        <a href="https://leetcode.com/u/mashrur/" target="_blank" rel="noopener me" aria-label="LeetCode profile" data-tip="LeetCode">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:mashrur.mahmood@gmail.com" aria-label="Send an email" data-tip="Email">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2.75 5.75h18.5v12.5H2.75z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m3.2 6.4 8.8 6.4 8.8-6.4"/></svg>
+        <a href="mailto:{{ c.email }}" aria-label="Send an email" data-tip="Email">
+          {% include icon.html name="email" %}
         </a>
       </li>
       <li class="social-sep" aria-hidden="true"></li>
       <li>
-        <a class="social-text" href="Mashrur_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="social-text" href="{{ c.resume }}" target="_blank" rel="noopener">Resume</a>
       </li>
     </ul>
 
@@ -176,93 +166,56 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker">01 / About</p>
-      <h2 id="about-h">Brief Introduction</h2>
+      <h2 id="about-h">{{ c.about.heading | escape }}</h2>
       <span class="rule" aria-hidden="true"></span>
     </div>
 
     <div class="about">
       <div class="about-text reveal">
-        <p>
-          I am a mechanical engineering graduate from BUET, based in Dhaka. I like building things
-          that move, and I like the moment a stubborn problem finally gives way.
-        </p>
-        <p>
-          Almost everything I am proud of came out of a team: a thesis group, a contest team at
-          three in the morning, a club committee arguing about a magazine layout. I enjoy the back
-          and forth of working with people, and I am just as happy leading as handing the lead to
-          whoever knows the problem best.
-        </p>
-        <p>
-          Away from a screen I watch far too many films and series, and I read whenever a book is
-          within reach. Somewhere along the way that turned into an eye for design, which keeps
-          finding its way into everything I make.
-        </p>
+        {%- for para in c.about.paragraphs %}
+        <p>{{ para }}</p>
+        {%- endfor %}
         <ul class="chips interests" aria-label="Outside work">
-          <li>Movies</li><li>Series</li><li>Books</li><li>Design</li><li>Game jams</li>
+          {%- for i in c.about.interests %}<li>{{ i | escape }}</li>{% endfor -%}
         </ul>
         <p class="now">
           <span class="now-dot" aria-hidden="true"></span>
-          <strong>Right now</strong> I am learning and building with AI tools, and working out how
-          to fold them into mechanical and robotic systems so they can reach engineering problems
-          the older approaches cannot.
+          <strong>Right now</strong> {{ c.about.now }}
         </p>
       </div>
 
       <aside class="about-side reveal" aria-label="Portrait">
         <figure class="portrait">
-          <img src="assets/img/portrait.svg" alt="Portrait of Mashrur Mahmood" width="800" height="800" loading="lazy" decoding="async">
+          <img src="{{ c.about.portrait }}" alt="{{ c.about.portrait_alt | escape }}" width="800" height="800" loading="lazy" decoding="async">
         </figure>
       </aside>
     </div>
 
     <h3 class="sub-head reveal">Education &amp; training</h3>
     <ol class="edu">
+      {%- for e in c.education %}
       <li class="reveal">
-        <p class="edu-when">Nov 2021 to Jun 2026</p>
-        <h4>BSc in Mechanical Engineering</h4>
-        <p class="edu-where">Bangladesh University of Engineering and Technology, Dhaka</p>
-        <p class="edu-note">CGPA 3.67 / 4.00. University Merit Stipend across three terms.</p>
-      </li>
-      <li class="reveal">
-        <p class="edu-when">Mar 2025</p>
-        <h4>Industrial Attachment, United Ashuganj Energy Ltd.</h4>
-        <p class="edu-where">195&nbsp;MW combined cycle gas engine power plant, Ashuganj</p>
+        <p class="edu-when">{{ e.when | escape }}</p>
+        <h4>{{ e.title | escape }}</h4>
+        <p class="edu-where">{{ e.where }}</p>
         <p class="edu-note">
-          A 13 day training programme across plant operations, covering gas engines, HRSGs, steam
-          turbines and substations, with time at the DCS and SCADA desks.
-          <a href="https://drive.google.com/file/d/1FGOMm-W1k0tzop3Tp_RQ-_Vlo7KT0Nnw/view?usp=sharing" target="_blank" rel="noopener">Training report</a>
+          {{ e.note }}
+          {%- if e.link %}
+          <a href="{{ e.link.url }}" target="_blank" rel="noopener">{{ e.link.label | escape }}</a>
+          {%- endif %}
         </p>
       </li>
-      <li class="reveal">
-        <p class="edu-when">2020</p>
-        <h4>Higher Secondary Certificate, Science</h4>
-        <p class="edu-where">Saint Joseph Higher Secondary School, Dhaka</p>
-        <p class="edu-note">GPA 5.00 / 5.00.</p>
-      </li>
+      {%- endfor %}
     </ol>
 
     <h3 class="sub-head reveal">Toolkit</h3>
     <div class="skills">
+      {%- for g in c.skills %}
       <div class="skill-group reveal">
-        <h4>Languages</h4>
-        <ul class="chips"><li>Python</li><li>C / C++</li><li>C#</li><li>Java</li><li>JavaScript</li><li>HTML / CSS</li></ul>
+        <h4>{{ g.group | escape }}</h4>
+        <ul class="chips">{% for s in g.items %}<li>{{ s | escape }}</li>{% endfor %}</ul>
       </div>
-      <div class="skill-group reveal">
-        <h4>AI &amp; Machine Learning</h4>
-        <ul class="chips"><li>Deep learning</li><li>Computer vision</li><li>Agentic AI</li><li>MCP</li><li>LLM tooling</li><li>NumPy</li><li>pandas</li><li>Jupyter</li></ul>
-      </div>
-      <div class="skill-group reveal">
-        <h4>Robotics &amp; Embedded</h4>
-        <ul class="chips"><li>ROS 2</li><li>PX4</li><li>Nav2</li><li>slam-toolbox</li><li>Gazebo</li><li>MAVLink</li><li>Pixhawk</li><li>Raspberry Pi</li><li>Arduino</li><li>LiDAR</li></ul>
-      </div>
-      <div class="skill-group reveal">
-        <h4>Software &amp; Cloud</h4>
-        <ul class="chips"><li>Git</li><li>Docker</li><li>AWS</li><li>Linux</li><li>Node.js</li><li>React</li></ul>
-      </div>
-      <div class="skill-group reveal">
-        <h4>Simulation &amp; Design</h4>
-        <ul class="chips"><li>Unity</li><li>Godot</li><li>SolidWorks</li><li>Adobe CC</li></ul>
-      </div>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -272,147 +225,61 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker">02 / Projects</p>
-      <h2 id="projects-h">Things I have built</h2>
+      <h2 id="projects-h">{{ c.projects_heading | escape }}</h2>
       <span class="rule" aria-hidden="true"></span>
     </div>
 
     <div class="filters reveal" role="group" aria-label="Filter projects by area">
       <button type="button" class="filter is-on" data-filter="all" aria-pressed="true">All</button>
-      <button type="button" class="filter" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
-      <button type="button" class="filter" data-filter="robotics" aria-pressed="false">Robotics</button>
-      <button type="button" class="filter" data-filter="mechanical" aria-pressed="false">Mechanical</button>
-      <button type="button" class="filter" data-filter="games" aria-pressed="false">Games</button>
+      {%- for f in c.filters %}
+      <button type="button" class="filter" data-filter="{{ f.key }}" aria-pressed="false">{{ f.label | escape }}</button>
+      {%- endfor %}
     </div>
     <p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p>
 
     <ul class="proj-grid" id="projectList">
+      {%- for p in c.projects %}
 
-      <li class="proj is-spotlight reveal" data-tags="ai robotics">
-        <article class="proj-card">
-          <p class="proj-flag">Flagship project</p>
+      <li class="proj{% if p.spotlight %} is-spotlight{% endif %} reveal" data-tags="{{ p.tags | join: ' ' }}">
+        <article class="proj-card{% if p.featured %} is-featured{% endif %}">
           <div class="proj-media">
-            <video class="proj-video" id="thesisVideo"
+            {%- if p.video %}
+            <video class="proj-video"
                    autoplay muted loop playsinline preload="metadata"
-                   poster="assets/img/uav-poster.png"
+                   poster="{{ p.video.poster }}"
                    width="1200" height="750"
-                   aria-label="Short clip of the autonomous indoor UAV in flight">
-              <source src="assets/video/uav-demo.webm" type="video/webm">
-              <source src="assets/video/uav-demo.mp4" type="video/mp4">
+                   aria-label="{{ p.video.label | escape }}">
+              {%- if p.video.webm %}
+              <source src="{{ p.video.webm }}" type="video/webm">
+              {%- endif %}
+              {%- if p.video.mp4 %}
+              <source src="{{ p.video.mp4 }}" type="video/mp4">
+              {%- endif %}
             </video>
+            {%- else %}
+            <img src="{{ p.image }}" alt="{{ p.alt | escape }}" width="1200" height="750" loading="lazy" decoding="async">
+            {%- endif %}
           </div>
           <div class="proj-body">
-            <p class="proj-meta"><span class="proj-lead">Undergraduate thesis</span></p>
-            <h3>Autonomous Indoor UAV with SLAM and Thermal Surveying</h3>
-            <p class="proj-hook">The project I would want to be judged on.</p>
-            <p>An autonomous quadcopter for GPS denied indoor flight, designed and assembled from
-               scratch, with LiDAR SLAM, optical flow stabilisation and onboard thermal imaging
-               feeding a live survey. Built end to end, from the airframe and sensor integration
-               to the ROS&nbsp;2 and PX4 stack that flies it.</p>
-            <ul class="chips sm"><li>ROS 2</li><li>PX4</li><li>Nav2</li><li>slam-toolbox</li><li>Gazebo</li><li>MAVLink</li><li>Pixhawk 6C</li></ul>
-            <p class="proj-links">
-              <a href="https://drive.google.com/file/d/1je-og2tN93wE13JT9YaWHDui7SlkzIIq/view?usp=sharing" target="_blank" rel="noopener">Thesis book</a>
-              <a href="https://drive.google.com/file/d/1Ey1UU40EU9y6pPJglhoveMlVFrcQvNYr/view?usp=sharing" target="_blank" rel="noopener">Full demo video</a>
+            <p class="proj-meta">
+              {%- if p.lead %}<span class="proj-lead">{{ p.lead | escape }}</span>{% endif -%}
+              {%- if p.award %} &middot; <span class="proj-award">{{ p.award | escape }}</span>{% endif -%}
+              {%- if p.role %} &middot; {{ p.role | escape }}{% endif -%}
             </p>
+            <h3>{{ p.title | escape }}</h3>
+            <p>{{ p.text }}</p>
+            <ul class="chips sm">{% for s in p.chips %}<li>{{ s | escape }}</li>{% endfor %}</ul>
+            {%- if p.links %}
+            <p class="proj-links">
+              {%- for l in p.links %}
+              <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | escape }}</a>
+              {%- endfor %}
+            </p>
+            {%- endif %}
           </div>
         </article>
       </li>
-
-      <li class="proj reveal" data-tags="ai">
-        <article class="proj-card is-featured">
-          <div class="proj-media">
-            <img src="assets/img/dlsprint.svg" alt="DL Sprint Bengali document layout analysis" width="1200" height="750" loading="lazy" decoding="async">
-          </div>
-          <div class="proj-body">
-            <p class="proj-meta"><span class="proj-lead">BUET CSE Fest</span> &middot; <span class="proj-award">BUET Rising Team</span></p>
-            <h3>DL Sprint 2.0, Bengali Document Layout Analysis</h3>
-            <p>A deep learning competition on segmenting and classifying regions of Bengali
-               document images. Our approach and results were written up as a paper and presented
-               at the festival.</p>
-            <ul class="chips sm"><li>Deep learning</li><li>Computer vision</li><li>Segmentation</li><li>Python</li></ul>
-            <p class="proj-links">
-              <a href="https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing" target="_blank" rel="noopener">Presented paper</a>
-            </p>
-          </div>
-        </article>
-      </li>
-
-      <li class="proj reveal" data-tags="ai games">
-        <article class="proj-card">
-          <div class="proj-media">
-            <img src="assets/img/aicontest.svg" alt="Steal the Flag competitive game AI agent" width="1200" height="750" loading="lazy" decoding="async">
-          </div>
-          <div class="proj-body">
-            <p class="proj-meta"><span class="proj-lead">BUET CSE Fest AI Contest</span> &middot; <span class="proj-award">5th place</span></p>
-            <h3>Steal the Flag, Game AI Agent</h3>
-            <p>A competitive bot for an adversarial capture the flag arena: strategy, pathfinding
-               and heuristics tuned across rounds of head to head matches against other teams.</p>
-            <ul class="chips sm"><li>Game AI</li><li>Pathfinding</li><li>Heuristics</li></ul>
-            <p class="proj-links">
-              <a href="https://github.com/mashmahmood/codinggame_stealtheflag" target="_blank" rel="noopener">Source on GitHub</a>
-            </p>
-          </div>
-        </article>
-      </li>
-
-      <li class="proj reveal" data-tags="mechanical">
-        <article class="proj-card">
-          <div class="proj-media">
-            <img src="assets/img/heatexchanger.webp" alt="Compact louvered fin heat exchanger for two wheelers" width="1200" height="750" loading="lazy" decoding="async">
-          </div>
-          <div class="proj-body">
-            <p class="proj-meta"><span class="proj-lead">Thermo fluid system design</span></p>
-            <h3>Compact Heat Exchanger for Two Wheelers</h3>
-            <p>Flat tubes and triangular louvered fins that outperform the conventional design on
-               heat transfer. A Python optimiser searched fin and tube geometry to cut weight
-               while holding performance, and the winning design was manufactured and pressure
-               tested.</p>
-            <ul class="chips sm"><li>Python</li><li>Thermal design</li><li>Optimisation</li><li>Laser cutting</li></ul>
-            <p class="proj-links">
-              <a href="https://drive.google.com/file/d/1qZ2tPLo2bX1O4M4IzsQ0tO_CYrqdp-Rn/view?usp=sharing" target="_blank" rel="noopener">Report</a>
-            </p>
-          </div>
-        </article>
-      </li>
-
-      <li class="proj reveal" data-tags="robotics mechanical">
-        <article class="proj-card">
-          <div class="proj-media">
-            <img src="assets/img/buckling.svg" alt="Automated buckling load test rig" width="1200" height="750" loading="lazy" decoding="async">
-          </div>
-          <div class="proj-body">
-            <p class="proj-meta"><span class="proj-lead">Electro mechanical system design</span></p>
-            <h3>Automated Buckling Load Determination</h3>
-            <p>A rig that finds the critical buckling load of a slender column on its own:
-               hydraulic actuation under Arduino control, with a real time detection algorithm
-               calling the buckling point live instead of by eye.</p>
-            <ul class="chips sm"><li>Arduino Mega</li><li>Load cell + HX711</li><li>Hydraulics</li><li>Control</li></ul>
-            <p class="proj-links">
-              <a href="https://drive.google.com/file/d/1Z4xrh70JVJ79gZ57j2d0oMXJqUDwjnv1/view?usp=sharing" target="_blank" rel="noopener">Poster</a>
-              <a href="https://youtu.be/QeiWl80-ftg" target="_blank" rel="noopener">Overview</a>
-              <a href="https://youtu.be/Pe4uGSBcJqo" target="_blank" rel="noopener">Guide</a>
-            </p>
-          </div>
-        </article>
-      </li>
-
-      <li class="proj reveal" data-tags="games">
-        <article class="proj-card">
-          <div class="proj-media">
-            <img src="assets/img/simulator.svg" alt="BRTA manual transmission driver training simulator" width="1200" height="750" loading="lazy" decoding="async">
-          </div>
-          <div class="proj-body">
-            <p class="proj-meta"><span class="proj-lead">Unity</span> &middot; Contributor</p>
-            <h3>BRTA Driver Training Simulator</h3>
-            <p>A manual transmission driver training simulator built in Unity, with Logitech
-               steering wheel and gear shifter peripherals wired in so the vehicle handles the way
-               a real one does.</p>
-            <ul class="chips sm"><li>Unity</li><li>C#</li><li>Vehicle physics</li><li>Hardware I/O</li></ul>
-            <p class="proj-links">
-              <a href="https://drive.google.com/file/d/1_D9t0WSmSG-gKEQoYqpyvuMCEqEKiS3M/view?usp=sharing" target="_blank" rel="noopener">Demo video</a>
-            </p>
-          </div>
-        </article>
-      </li>
+      {%- endfor %}
 
     </ul>
   </div>
@@ -423,76 +290,55 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker">03 / ECA &amp; Awards</p>
-      <h2 id="eca-h">Extracurricular Engagement</h2>
+      <h2 id="eca-h">{{ c.eca_heading | escape }}</h2>
       <span class="rule" aria-hidden="true"></span>
     </div>
 
     <h3 class="sub-head reveal">Competitive programming</h3>
     <div class="stats">
+      {%- for s in c.cp_stats %}
       <div class="stat reveal">
-        <span class="stat-num">Expert</span>
-        <span class="stat-label">Codeforces title, max rating <b data-count="1739">1739</b></span>
+        <span class="stat-num">
+          {%- if s.count %}<b data-count="{{ s.count }}">{{ s.count }}</b>{% else %}{{ s.value | escape }}{% endif -%}
+          {{ s.suffix | escape }}
+          {%- if s.sub %}<span class="stat-sub">{{ s.sub | escape }}</span>{% endif -%}
+        </span>
+        <span class="stat-label">{{ s.label | escape }}{% if s.label_count %} <b data-count="{{ s.label_count }}">{{ s.label_count }}</b>{% endif %}</span>
       </div>
-      <div class="stat reveal">
-        <span class="stat-num"><b data-count="500">500</b>+</span>
-        <span class="stat-label">Problems solved across platforms</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-num"><b data-count="40">40</b><span class="stat-sub">/311</span></span>
-        <span class="stat-label">ICPC Dhaka Regional 2025, honourable mention</span>
-      </div>
+      {%- endfor %}
     </div>
 
     <div class="cp-foot reveal">
-      <p class="cp-text">
-        Contests from school level through university, including IOI selection contests, IUPCs and
-        the ICPC, across a wide range of data structures and algorithms.
-      </p>
+      <p class="cp-text">{{ c.cp_text }}</p>
       <ul class="social sm" aria-label="Competitive programming profiles">
+        {%- for p in c.profiles %}{% if p.cp %}
         <li>
-          <a href="https://codeforces.com/profile/iamashrur" target="_blank" rel="noopener" aria-label="Codeforces profile" data-tip="Codeforces">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 7.5A1.5 1.5 0 0 1 6 9v10.5A1.5 1.5 0 0 1 4.5 21h-3C.673 21 0 20.328 0 19.5V9c0-.828.673-1.5 1.5-1.5h3zm9-4.5A1.5 1.5 0 0 1 15 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5v-15A1.5 1.5 0 0 1 10.5 3h3zm9 7.5A1.5 1.5 0 0 1 24 12v7.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 18 19.5V12a1.5 1.5 0 0 1 1.5-1.5h3z"/></svg>
+          <a href="{{ p.url }}" target="_blank" rel="noopener" aria-label="{{ p.label | escape }} profile" data-tip="{{ p.label | escape }}">
+            {% include icon.html name=p.id %}
           </a>
         </li>
-        <li>
-          <a href="https://leetcode.com/u/mashrur/" target="_blank" rel="noopener" aria-label="LeetCode profile" data-tip="LeetCode">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
-          </a>
-        </li>
+        {%- endif %}{% endfor %}
       </ul>
     </div>
 
     <h3 class="sub-head reveal">Awards</h3>
     <ul class="awards">
-      <li class="reveal"><span class="a-year">2025</span><span class="a-text"><strong>Honourable Mention, ICPC Dhaka Regional.</strong> 40th of 311 teams.</span></li>
-      <li class="reveal"><span class="a-year">2023</span><span class="a-text"><strong>BUET Rising Team, DL Sprint 2.0.</strong> Bengali document layout analysis at BUET CSE Fest.</span></li>
-      <li class="reveal"><span class="a-year">2023</span><span class="a-text"><strong>Best BUET Junior Team, IEEE CS Game Jam.</strong> 96 hours, more than 30 competing teams.</span></li>
-      <li class="reveal"><span class="a-year">2022</span><span class="a-text"><strong>5th place, AI Contest, BUET CSE Fest.</strong> Adversarial game AI agent.</span></li>
-      <li class="reveal"><span class="a-year">2022</span><span class="a-text"><strong>University Merit Stipend, BUET.</strong> Awarded across three terms.</span></li>
-      <li class="reveal"><span class="a-year">2018</span><span class="a-text"><strong>Winner, National Math Olympiad.</strong> Participant at the National Math Camp.</span></li>
+      {%- for a in c.awards %}
+      <li class="reveal"><span class="a-year">{{ a.year }}</span><span class="a-text"><strong>{{ a.title | escape }}</strong> {{ a.note | escape }}</span></li>
+      {%- endfor %}
     </ul>
 
     <h3 class="sub-head reveal">Activities and leadership</h3>
     <div class="acts">
+      {%- for a in c.activities %}
       <article class="act reveal">
-        <h4>Game development</h4>
-        <p>Several Unity 3D projects including Android releases, plus a 96 hour game jam run both
-           online and on site, where our team took Best BUET Junior Team out of more than 30
-           entries.</p>
+        <h4>{{ a.title | escape }}</h4>
+        {%- if a.when %}
+        <p class="act-when">{{ a.when | escape }}</p>
+        {%- endif %}
+        <p>{{ a.text }}</p>
       </article>
-      <article class="act reveal">
-        <h4>President, Josephite Math Club</h4>
-        <p class="act-when">2019 to 2020</p>
-        <p>Ran the club's flagship event, Josephite Math Mania, end to end. Coordinated seminars,
-           led member collaboration and delegation, and produced the annual magazine
-           <em>Summation</em> including its layout and visual design.</p>
-      </article>
-      <article class="act reveal">
-        <h4>Class Representative, BUET</h4>
-        <p class="act-when">2025 to 2026</p>
-        <p>Elected representative for my batch in the Department of Mechanical Engineering,
-           coordinating between students and faculty.</p>
-      </article>
+      {%- endfor %}
     </div>
 
     <div class="gal-head reveal">
@@ -500,11 +346,11 @@
       <div class="gal-ctrl">
         <button type="button" class="gal-btn" data-gal-dir="-1"
                 aria-controls="galTrack" aria-label="Scroll highlights left">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="M15 4 7 12l8 8"/></svg>
+          {% include icon.html name="arrow-left" %}
         </button>
         <button type="button" class="gal-btn" data-gal-dir="1"
                 aria-controls="galTrack" aria-label="Scroll highlights right">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="m9 4 8 8-8 8"/></svg>
+          {% include icon.html name="arrow-right" %}
         </button>
       </div>
     </div>
@@ -512,96 +358,22 @@
     <div class="gal reveal" id="gal">
       <ul class="gal-track" id="galTrack" tabindex="0"
           aria-label="Highlights, a horizontally scrollable gallery">
+        {%- for h in c.highlights %}
         <li>
           <figure class="gal-item">
             <button class="gal-shot" type="button"
-                    data-full="assets/img/highlights/icpc-dhaka.svg"
-                    data-caption="ICPC Dhaka Regional, 40th of 311 teams"
-                    aria-label="Open a larger view: ICPC Dhaka Regional">
-              <img src="assets/img/highlights/icpc-dhaka.svg" alt="Our team at the ICPC Dhaka Regional 2025"
+                    data-full="{{ h.full | default: h.image }}"
+                    data-caption="{{ h.title | escape }}{% if h.caption %}, {{ h.caption | escape }}{% endif %}"
+                    aria-label="Open a larger view: {{ h.title | escape }}">
+              <img src="{{ h.image }}" alt="{{ h.alt | escape }}"
                    width="1200" height="800" loading="lazy" decoding="async">
             </button>
             <figcaption>
-              <span class="gal-title">ICPC Dhaka Regional</span>
-              <span class="gal-sub">40th of 311 teams</span>
+              <span class="gal-title">{{ h.title | escape }}</span>
             </figcaption>
           </figure>
         </li>
-        <li>
-          <figure class="gal-item">
-            <button class="gal-shot" type="button"
-                    data-full="assets/img/highlights/dl-sprint.svg"
-                    data-caption="DL Sprint 2.0, BUET CSE Fest, paper presented"
-                    aria-label="Open a larger view: DL Sprint 2.0">
-              <img src="assets/img/highlights/dl-sprint.svg" alt="Presenting the DL Sprint 2.0 paper at BUET CSE Fest"
-                   width="1200" height="800" loading="lazy" decoding="async">
-            </button>
-            <figcaption>
-              <span class="gal-title">DL Sprint 2.0</span>
-              <span class="gal-sub">BUET CSE Fest, paper presented</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="gal-item">
-            <button class="gal-shot" type="button"
-                    data-full="assets/img/highlights/game-jam.svg"
-                    data-caption="IEEE CS Game Jam, 96 hours, Best BUET Junior Team"
-                    aria-label="Open a larger view: IEEE CS Game Jam">
-              <img src="assets/img/highlights/game-jam.svg" alt="The team during the 96 hour IEEE CS Game Jam"
-                   width="1200" height="800" loading="lazy" decoding="async">
-            </button>
-            <figcaption>
-              <span class="gal-title">IEEE CS Game Jam</span>
-              <span class="gal-sub">96 hours, Best BUET Junior Team</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="gal-item">
-            <button class="gal-shot" type="button"
-                    data-full="assets/img/highlights/math-camp.svg"
-                    data-caption="National Math Camp, Math Olympiad winner"
-                    aria-label="Open a larger view: National Math Camp">
-              <img src="assets/img/highlights/math-camp.svg" alt="At the National Math Camp after the Math Olympiad"
-                   width="1200" height="800" loading="lazy" decoding="async">
-            </button>
-            <figcaption>
-              <span class="gal-title">National Math Camp</span>
-              <span class="gal-sub">Math Olympiad winner</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="gal-item">
-            <button class="gal-shot" type="button"
-                    data-full="assets/img/highlights/math-mania.svg"
-                    data-caption="Josephite Math Mania, Club flagship event"
-                    aria-label="Open a larger view: Josephite Math Mania">
-              <img src="assets/img/highlights/math-mania.svg" alt="Running Josephite Math Mania as club president"
-                   width="1200" height="800" loading="lazy" decoding="async">
-            </button>
-            <figcaption>
-              <span class="gal-title">Josephite Math Mania</span>
-              <span class="gal-sub">Club flagship event</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="gal-item">
-            <button class="gal-shot" type="button"
-                    data-full="assets/img/highlights/summation.svg"
-                    data-caption="Summation, Annual magazine, layout and design"
-                    aria-label="Open a larger view: Summation">
-              <img src="assets/img/highlights/summation.svg" alt="Spread from Summation, the club's annual magazine"
-                   width="1200" height="800" loading="lazy" decoding="async">
-            </button>
-            <figcaption>
-              <span class="gal-title">Summation</span>
-              <span class="gal-sub">Annual magazine, layout and design</span>
-            </figcaption>
-          </figure>
-        </li>
+        {%- endfor %}
       </ul>
       <p class="gal-hint">Scroll or drag sideways for more.</p>
     </div>
@@ -613,43 +385,27 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker">04 / Contact</p>
-      <h2 id="contact-h">Say hello</h2>
+      <h2 id="contact-h">{{ c.contact.heading | escape }}</h2>
       <span class="rule" aria-hidden="true"></span>
     </div>
 
-    <p class="contact-lede reveal">
-      Open to roles and collaborations in AI and machine learning, robotics and autonomous
-      systems. Email reaches me fastest.
-    </p>
+    <p class="contact-lede reveal">{{ c.contact.lede }}</p>
 
-    <a class="mail reveal" href="mailto:mashrur.mahmood@gmail.com">
+    <a class="mail reveal" href="mailto:{{ c.email }}">
       <span class="mail-label">Email</span>
-      <span class="mail-addr">mashrur.mahmood@gmail.com</span>
+      <span class="mail-addr">{{ c.email }}</span>
     </a>
 
     <ul class="social lg reveal" aria-label="Profiles and resume">
+      {%- for p in c.profiles %}
       <li>
-        <a href="https://github.com/mashmahmood" target="_blank" rel="noopener me" aria-label="GitHub profile" data-tip="GitHub">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <a href="{{ p.url }}" target="_blank" rel="noopener me" aria-label="{{ p.label | escape }} profile" data-tip="{{ p.label | escape }}">
+          {% include icon.html name=p.id %}
         </a>
       </li>
-      <li>
-        <a href="https://www.linkedin.com/in/mashrur-mahmood/" target="_blank" rel="noopener me" aria-label="LinkedIn profile" data-tip="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-        </a>
-      </li>
-      <li>
-        <a href="https://codeforces.com/profile/iamashrur" target="_blank" rel="noopener me" aria-label="Codeforces profile" data-tip="Codeforces">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 7.5A1.5 1.5 0 0 1 6 9v10.5A1.5 1.5 0 0 1 4.5 21h-3C.673 21 0 20.328 0 19.5V9c0-.828.673-1.5 1.5-1.5h3zm9-4.5A1.5 1.5 0 0 1 15 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5v-15A1.5 1.5 0 0 1 10.5 3h3zm9 7.5A1.5 1.5 0 0 1 24 12v7.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 18 19.5V12a1.5 1.5 0 0 1 1.5-1.5h3z"/></svg>
-        </a>
-      </li>
-      <li>
-        <a href="https://leetcode.com/u/mashrur/" target="_blank" rel="noopener me" aria-label="LeetCode profile" data-tip="LeetCode">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
-        </a>
-      </li>
+      {%- endfor %}
       <li class="social-sep" aria-hidden="true"></li>
-      <li><a class="social-text" href="Mashrur_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a class="social-text" href="{{ c.resume }}" target="_blank" rel="noopener">Resume</a></li>
     </ul>
   </div>
 </section>
@@ -658,8 +414,7 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <p class="footer-mark">MM &copy; <span id="year">2026</span></p>
-    <p>Hand written HTML, CSS and JavaScript. No frameworks.</p>
+    <p class="footer-mark">{{ c.name | escape }} &copy; <span id="year">{{ site.time | date: "%Y" }}</span></p>
   </div>
 </footer>
 
@@ -667,14 +422,14 @@
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged highlight" hidden>
   <button type="button" class="lb-close" id="lbClose" aria-label="Close the enlarged view">&times;</button>
   <button type="button" class="lb-nav lb-prev" data-lb-dir="-1" aria-label="Previous highlight">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="M15 4 7 12l8 8"/></svg>
+    {% include icon.html name="arrow-left" %}
   </button>
   <figure class="lb-figure">
     <img class="lb-img" id="lbImg" alt="">
     <figcaption class="lb-cap" id="lbCap"></figcaption>
   </figure>
   <button type="button" class="lb-nav lb-next" data-lb-dir="1" aria-label="Next highlight">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" d="m9 4 8 8-8 8"/></svg>
+    {% include icon.html name="arrow-right" %}
   </button>
 </div>
 
