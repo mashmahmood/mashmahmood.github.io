@@ -47,29 +47,39 @@ about:
   portrait_alt: Portrait of Mashrur Mahmood
   paragraphs:                                   # HTML ok
     - >-
-      I am a Mechanical Engineering graduate from BUET, based in Dhaka,
-      with interests spanning robotics, automation and software development.
+      I am a Software Engineer based in Dhaka, dedicated to building secure and efficient software systems. 
+      I complement my industry experience with ongoing academic research as an MSc Cybersecurity student in the Department of CSE at BUET.
     - >-
-      I enjoy working on problems that require both technical depth and practical thinking.
-      Through engineering projects, competitive programming, and software development,
-      I have had the opportunity to work across different areas and learn how to approach problems
-      from multiple perspectives. I value collaboration and enjoy both contributing as part of a
-      team and taking responsibility when needed.
+      My path into software runs through competitive programming, where I reached Expert on
+      Codeforces and competed at the ICPC Dhaka Regional, and through a mechanical engineering
+      degree where the most interesting problems kept turning out to be software ones: flight
+      control on ROS&nbsp;2, real time detection on a microcontroller, a Python optimiser for a
+      heat exchanger. I enjoy problems that need both algorithmic depth and practical judgement,
+      and I value collaboration as much as owning a piece of work end to end.
     - >-
       Outside of engineering, I enjoy films, series, and reading.
       I also have a strong interest in design and visual work,
       which often influences how I approach the projects I build.
   interests: [Movies, Series, Books, Design, Anime, Games]
   now: >-                                        # HTML ok
-    I am currently working on cloud-based products, applying DevOps practices and
-    exploring the integration of AI, machine learning, and deep learning into practical applications.
+    Deploying robust SaaS solutions via infrastructure as code and automated CI/CD release pipelines, 
+    while pursuing an MSc in Cybersecurity at BUET.
 
 # where and note: HTML ok
-education:
-  - when: Nov 2021 to Jun 2026
-    title: BSc in Mechanical Engineering
-    where: Bangladesh University of Engineering and Technology, Dhaka
-    note: CGPA 3.67 / 4.00. University Merit Stipend across three terms.
+experience:
+  - when: 2026 to present
+    title: Software Engineer, Info Inlet
+    where: Remote
+    note: >-
+      Shipped multiple SaaS products on AWS Marketplace and Microsoft Azure Marketplace, covering
+      backend APIs, infrastructure, CI/CD and release. Built <strong>AI Cloud Gateway</strong>, an
+      OpenAI compatible LLM router for Amazon Bedrock and Azure AI Foundry: a FastAPI backend on
+      Lambda behind API Gateway and CloudFront, with Cognito auth, DynamoDB storage and a
+      Next.js / TypeScript dashboard on S3. Built <strong>Data Guard</strong>, PII, PHI and secret
+      detection and redaction for LLM pipelines, served as an HTTPS API on Lambda and as an MCP
+      server in Docker on Bedrock AgentCore. Integrated marketplace subscription, licensing and
+      usage metering with EventBridge and SQS, with API keys stored hashed. All infrastructure is
+      code in Terraform and CloudFormation, and GitHub Actions tests and deploys every release.
   - when: Mar 2025
     title: Industrial Attachment, United Ashuganj Energy Ltd.
     where: 195&nbsp;MW combined cycle gas engine power plant, Ashuganj
@@ -79,6 +89,16 @@ education:
     link:
       label: Training report
       url: https://drive.google.com/file/d/1FGOMm-W1k0tzop3Tp_RQ-_Vlo7KT0Nnw/view?usp=sharing
+
+education:
+  - when: 2026 to present
+    title: MSc in Cybersecurity
+    where: Department of Computer Science and Engineering, BUET, Dhaka
+    note: Currently Ongoing
+  - when: Nov 2021 to Jun 2026
+    title: BSc in Mechanical Engineering
+    where: Bangladesh University of Engineering and Technology, Dhaka
+    note: CGPA 3.67 / 4.00. University Merit Stipend across three terms.
   - when: "2020"
     title: Higher Secondary Certificate, Science
     where: Saint Joseph Higher Secondary School, Dhaka
@@ -86,14 +106,18 @@ education:
 
 skills:
   - group: Languages
-    items: [Python, C / C++, "C#", JavaScript, Java]
-  - group: AI & Machine Learning
-    items: [Deep learning, Computer vision, Agentic AI, MCP, LLM tooling, NumPy, pandas]
+    items: [Python, TypeScript / JavaScript, "C#", C / C++, Java, SQL, Bash]
+  - group: Cloud
+    items: [AWS Lambda, API Gateway, CloudFront, S3, ECR, EC2, IAM, Cognito, DynamoDB, EventBridge, SQS, Azure]
+  - group: DevOps
+    items: [Terraform, CloudFormation, Docker, GitHub Actions, CI/CD, Git, Linux]
+  - group: AI & LLMs
+    items: [Amazon Bedrock, Azure AI Foundry, MCP, LLM routing, Guardrails, Prompt engineering, AI coding agents, PyTorch]
+  - group: Frameworks
+    items: [FastAPI, Next.js, React, Node.js, pytest, pandas, NumPy]
   - group: Robotics & Embedded
-    items: [ROS 2, PX4, Nav2, slam-toolbox, Gazebo, MAVLink, Pixhawk, Raspberry Pi, Arduino, LiDAR]
-  - group: Software & Cloud
-    items: [Git, Docker, AWS, Azure, Linux, Node.js, React]
-  - group: Simulation & Design
+    items: [ROS 2, PX4, Nav2, Gazebo, MAVLink, Raspberry Pi, Arduino]
+  - group: Engines & Design
     items: [Unity, Godot, SolidWorks, Adobe CC]
 
 # ============================= 02 / PROJECTS ===============================
@@ -103,12 +127,12 @@ projects_heading: Things I have built
 filters:
   - key: ai
     label: AI & ML
+  - key: games
+    label: Games
   - key: robotics
     label: Robotics
   - key: mechanical
     label: Mechanical
-  - key: games
-    label: Games
 
 # Order here is the order on the page.
 #   spotlight: true   full width card, media beside the text (the thesis)
@@ -126,11 +150,12 @@ projects:
       poster: assets/img/uav-poster.webp
       label: Short clip of the autonomous indoor UAV in flight
     text: >-                                     # HTML ok
-      An autonomous quadcopter for GPS denied indoor flight, designed and assembled from
-      scratch, with LiDAR SLAM, optical flow stabilisation and onboard thermal imaging
-      feeding a live survey. Built end to end, from the airframe and sensor integration
-      to the ROS&nbsp;2 and PX4 stack that flies it.
-    chips: [ROS 2, PX4, Nav2, slam-toolbox, Gazebo, MAVLink, Pixhawk 6C]
+      A quadcopter that maps and navigates indoor spaces without GPS and spots heat sources in
+      real time with a thermal camera. I wrote the Python ROS&nbsp;2 nodes for offboard flight
+      control, odometry and thermal imaging, connecting a PX4 flight controller to LiDAR SLAM
+      and Nav2 path planning. The same code runs in Gazebo and on the real drone, and I also
+      designed and assembled the airframe and sensor stack.
+    chips: [Python, ROS 2, PX4, Nav2, slam-toolbox, Gazebo, MAVLink]
     links:
       - label: Thesis book
         url: https://drive.google.com/file/d/1je-og2tN93wE13JT9YaWHDui7SlkzIIq/view?usp=sharing
@@ -138,7 +163,51 @@ projects:
         url: https://youtu.be/KSZB9LvfkQg
       - label: GitHub
         url: https://github.com/mashmahmood/ws_offboard_control
-  
+
+  - title: Steal the Flag, Game AI Agent
+    tags: [ai, games]
+    lead: BUET CSE Fest AI Contest
+    award: 5th place
+    image: assets/img/aicontest.webp
+    alt: Steal the Flag competitive game AI agent
+    text: >-
+      A competitive bot for an adversarial capture the flag arena: strategy, pathfinding
+      and heuristics tuned across rounds of head to head matches against other teams.
+    chips: [Game AI, Pathfinding, Heuristics]
+    links:
+      - label: Source on GitHub
+        url: https://github.com/mashmahmood/codinggame_stealtheflag
+
+  - title: DL Sprint 2.0, Bengali Document Layout Analysis
+    tags: [ai]
+    lead: BUET CSE Fest
+    award: BUET Rising Team
+    image: assets/img/dlsprint.webp
+    alt: DL Sprint Bengali document layout analysis
+    text: >-
+      A deep learning competition on segmenting and classifying regions of Bengali
+      document images. Our approach and results were written up as a paper and presented
+      at the festival.
+    chips: [Deep learning, Computer vision, Segmentation, Python]
+    links:
+      - label: Presented paper
+        url: https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing
+
+  - title: BRTA Driver Training Simulator
+    tags: [games]
+    lead: Unity
+    role: Contributor
+    image: assets/img/simulator.webp
+    alt: BRTA manual transmission driver training simulator
+    text: >-
+      A manual transmission driver training simulator built in Unity, with Logitech
+      steering wheel and gear shifter peripherals wired in so the vehicle handles the way
+      a real one does.
+    chips: [Unity, "C#", Vehicle physics, Hardware I/O]
+    links:
+      - label: Demo video
+        url: https://drive.google.com/file/d/1_D9t0WSmSG-gKEQoYqpyvuMCEqEKiS3M/view?usp=sharing
+
   - title: Automated Buckling Load Determination
     tags: [robotics, mechanical]
     lead: Electro mechanical system design
@@ -157,36 +226,6 @@ projects:
       - label: Guide
         url: https://youtu.be/Pe4uGSBcJqo
 
-
-  - title: DL Sprint 2.0, Bengali Document Layout Analysis
-    tags: [ai]
-    lead: BUET CSE Fest
-    award: BUET Rising Team
-    image: assets/img/dlsprint.webp
-    alt: DL Sprint Bengali document layout analysis
-    text: >-
-      A deep learning competition on segmenting and classifying regions of Bengali
-      document images. Our approach and results were written up as a paper and presented
-      at the festival.
-    chips: [Deep learning, Computer vision, Segmentation, Python]
-    links:
-      - label: Presented paper
-        url: https://drive.google.com/file/d/14pGRnZ0fPzqz3XTXdz7R4WcKZse4zY12/view?usp=sharing
-
-  - title: Steal the Flag, Game AI Agent
-    tags: [ai, games]
-    lead: BUET CSE Fest AI Contest
-    award: 5th place
-    image: assets/img/aicontest.webp
-    alt: Steal the Flag competitive game AI agent
-    text: >-
-      A competitive bot for an adversarial capture the flag arena: strategy, pathfinding
-      and heuristics tuned across rounds of head to head matches against other teams.
-    chips: [Game AI, Pathfinding, Heuristics]
-    links:
-      - label: Source on GitHub
-        url: https://github.com/mashmahmood/codinggame_stealtheflag
-
   - title: Compact Heat Exchanger for Two Wheelers
     tags: [mechanical]
     lead: Thermo fluid system design
@@ -201,21 +240,6 @@ projects:
     links:
       - label: Report
         url: https://drive.google.com/file/d/1qZ2tPLo2bX1O4M4IzsQ0tO_CYrqdp-Rn/view?usp=sharing
-
-  - title: BRTA Driver Training Simulator
-    tags: [games]
-    lead: Unity
-    role: Contributor
-    image: assets/img/simulator.webp
-    alt: BRTA manual transmission driver training simulator
-    text: >-
-      A manual transmission driver training simulator built in Unity, with Logitech
-      steering wheel and gear shifter peripherals wired in so the vehicle handles the way
-      a real one does.
-    chips: [Unity, "C#", Vehicle physics, Hardware I/O]
-    links:
-      - label: Demo video
-        url: https://drive.google.com/file/d/1_D9t0WSmSG-gKEQoYqpyvuMCEqEKiS3M/view?usp=sharing
 
 # ========================== 03 / ECA & AWARDS ==============================
 eca_heading: Extracurricular Engagement
@@ -294,10 +318,10 @@ highlights:
     caption: Receiving Crest from Dr. Mohammad Kaykobad for Serving as President of Josephite Math Club
     image: assets/img/highlights/math-mania.webp
     alt: Receiving Crest of President
-  - title: Closing Speech
-    caption: Delivering Speech at the Closing Ceremony
-    image: assets/img/highlights/speech.webp
-    alt: Speech at Josephite Math Mania
+  # - title: Closing Speech
+  #   caption: Delivering Speech at the Closing Ceremony
+  #   image: assets/img/highlights/speech.webp
+  #   alt: Speech at Josephite Math Mania
   - title: Dr. Jamilur Reza Chowdhury
     caption: Interviewing Sir for Annual Magazine "Summation" of Josephite Math Club
     image: assets/img/highlights/jamilur-reza-sir.webp
@@ -311,5 +335,5 @@ highlights:
 contact:
   heading: Say hello
   lede: >-                                       # HTML ok
-    Open to roles and collaborations in AI and machine learning, software engineering, robotics,
-    and autonomous systems. Email is the fastest way to reach me.
+    Open to software engineering roles, especially in cloud, DevOps, backend and security, and to
+    collaborations in applied AI. Email is the fastest way to reach me.

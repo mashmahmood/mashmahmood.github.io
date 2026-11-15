@@ -887,16 +887,41 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 700; letter-spacing: -0.
   :root { --wrap: 1180px; }
 }
 
+/* Reduced motion (Windows "Animation effects" off, macOS "Reduce motion").
+   "Reduce" is not "none": anything that moves across the screen is swapped
+   for a fade, glow or colour change, so the page still feels alive without
+   sliding, drifting, lifting or zooming. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
-  }
-  .reveal { opacity: 1; transform: none; }
-  .caret, .scroll-cue-box { animation: none; }
-  .hero-glow { animation: none; }
+
+  /* reveal: fade in place instead of sliding up */
+  .reveal { transform: none; }
+  .reveal.is-in { transition: opacity .7s ease; }
+
+  /* hero glow: breathe instead of drift */
+  .hero-glow { animation: glow-breathe 7s ease-in-out infinite alternate; }
+
+  /* scroll cue: pulse instead of hop */
+  .scroll-cue-box { animation: fade-pulse 1.8s ease-in-out infinite; }
+
+  /* hover: keep the colour, border and pixel shadow, drop the lift and zoom */
+  .social a:hover, .social a:focus-visible,
+  .chips li:hover,
+  .proj-card:hover,
+  .stat:hover,
+  .act:hover,
+  .gal-shot:hover,
+  .mail:hover { transform: none; }
+  .proj-card:hover .proj-media img,
+  .gal-shot:hover img { transform: none; }
+}
+@keyframes glow-breathe {
+  from { opacity: .55; }
+  to   { opacity: 1; }
+}
+@keyframes fade-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .3; }
 }
 
 @media (prefers-contrast: more) {

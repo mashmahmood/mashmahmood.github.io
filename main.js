@@ -69,7 +69,8 @@
   /* ---------------------- reveal elements as they enter ------------------ */
   var revealables = $$(".reveal");
 
-  if (reduced || !("IntersectionObserver" in window)) {
+  /* With reduced motion the CSS turns this into a plain fade, so it still runs. */
+  if (!("IntersectionObserver" in window)) {
     revealables.forEach(function (el) { el.classList.add("is-in"); });
   } else {
     var revealIO = new IntersectionObserver(function (entries, obs) {
@@ -307,7 +308,7 @@
   function countUp(el) {
     var target = parseInt(el.getAttribute("data-count"), 10);
     if (isNaN(target)) return;
-    if (reduced) { el.textContent = String(target); return; }
+    /* A number ticking up is not movement, so this runs with reduced motion too. */
 
     var start = null;
     var span = 900;

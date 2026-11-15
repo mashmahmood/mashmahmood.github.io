@@ -9,17 +9,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#07090E">
 
-<title>Mashrur Mahmood | Robotics, AI and Software Portfolio</title>
-<meta name="description" content="Portfolio of Mashrur Mahmood, a BUET mechanical engineering graduate working across robotics, autonomous systems, applied AI and machine learning. Codeforces Expert and ICPC Dhaka regionalist.">
+<title>Mashrur Mahmood | Software Engineer Portfolio</title>
+<meta name="description" content="Portfolio of Mashrur Mahmood, a software engineer working on cloud, DevOps and applied AI, and an MSc Cybersecurity student at BUET CSE. Codeforces Expert and ICPC Dhaka regionalist.">
 <meta name="author" content="Mashrur Mahmood">
-<meta name="keywords" content="Mashrur Mahmood, robotics engineer, AI, machine learning, ROS 2, PX4, autonomous UAV, SLAM, competitive programming, Codeforces Expert, ICPC, BUET, mechanical engineering, Dhaka">
+<meta name="keywords" content="Mashrur Mahmood, software engineer, AWS, Terraform, FastAPI, Next.js, TypeScript, serverless, CI/CD, DevOps, LLM, cybersecurity, agentic AI, ROS 2, competitive programming, Codeforces Expert, ICPC, BUET, Dhaka">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://mashmahmood.github.io/">
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Mashrur Mahmood">
-<meta property="og:title" content="Mashrur Mahmood | Robotics, AI and Software Portfolio">
-<meta property="og:description" content="Mechanical engineering graduate building robots, autonomous systems and AI driven software. Codeforces Expert and ICPC Dhaka regionalist.">
+<meta property="og:title" content="Mashrur Mahmood | Software Engineer Portfolio">
+<meta property="og:description" content="Software engineer shipping cloud products on AWS, with a background in robotics and competitive programming. Codeforces Expert and ICPC Dhaka regionalist.">
 <meta property="og:url" content="https://mashmahmood.github.io/">
 <meta property="og:image" content="https://mashmahmood.github.io/assets/img/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -30,8 +30,8 @@
 <meta property="profile:last_name" content="Mahmood">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mashrur Mahmood | Robotics, AI and Software Portfolio">
-<meta name="twitter:description" content="Mechanical engineering graduate building robots, autonomous systems and AI driven software.">
+<meta name="twitter:title" content="Mashrur Mahmood | Software Engineer Portfolio">
+<meta name="twitter:description" content="Software engineer shipping cloud products on AWS, with a background in robotics and competitive programming.">
 <meta name="twitter:image" content="https://mashmahmood.github.io/assets/img/og-cover.png">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -54,8 +54,8 @@
       "familyName": "Mahmood",
       "url": "https://mashmahmood.github.io/",
       "email": "mailto:{{ c.email }}",
-      "jobTitle": "Robotics and AI Engineer",
-      "description": "Mechanical engineering graduate working across robotics, autonomous systems, applied machine learning and software.",
+      "jobTitle": "Software Engineer",
+      "description": "Software engineer working on cloud, DevOps and applied AI, with a background in robotics and competitive programming.",
       "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "Bangladesh University of Engineering and Technology"
@@ -66,10 +66,10 @@
         "addressCountry": "BD"
       },
       "knowsAbout": [
-        "Robotics", "ROS 2", "PX4", "SLAM", "Autonomous UAV", "Machine Learning",
-        "Deep Learning", "Computer Vision", "Agentic AI", "Model Context Protocol",
-        "AWS", "Docker", "Competitive Programming", "Mechanical Design", "Unity",
-        "Embedded Systems"
+        "Software Engineering", "AWS", "Terraform", "CloudFormation", "CI/CD",
+        "Docker", "DevOps", "Cybersecurity", "Agentic AI", "Model Context Protocol",
+        "Machine Learning", "Competitive Programming", "Algorithms", "ROS 2",
+        "Robotics", "Unity"
       ],
       "sameAs": [
         {%- for p in c.profiles %}
@@ -81,7 +81,7 @@
       "@type": "ProfilePage",
       "@id": "https://mashmahmood.github.io/#webpage",
       "url": "https://mashmahmood.github.io/",
-      "name": "Mashrur Mahmood | Robotics, AI and Software Portfolio",
+      "name": "Mashrur Mahmood | Software Engineer Portfolio",
       "inLanguage": "en",
       "mainEntity": { "@id": "https://mashmahmood.github.io/#person" }
     }
@@ -191,7 +191,24 @@
       </aside>
     </div>
 
-    <h3 class="sub-head reveal">Education &amp; training</h3>
+    <h3 class="sub-head reveal">Experience</h3>
+    <ol class="edu">
+      {%- for e in c.experience %}
+      <li class="reveal">
+        <p class="edu-when">{{ e.when | escape }}</p>
+        <h4>{{ e.title | escape }}</h4>
+        <p class="edu-where">{{ e.where }}</p>
+        <p class="edu-note">
+          {{ e.note }}
+          {%- if e.link %}
+          <a href="{{ e.link.url }}" target="_blank" rel="noopener">{{ e.link.label | escape }}</a>
+          {%- endif %}
+        </p>
+      </li>
+      {%- endfor %}
+    </ol>
+
+    <h3 class="sub-head reveal">Education</h3>
     <ol class="edu">
       {%- for e in c.education %}
       <li class="reveal">
