@@ -71,15 +71,16 @@ experience:
     title: Software Engineer, Info Inlet
     where: Remote
     note: >-
-      Shipped multiple SaaS products on AWS Marketplace and Microsoft Azure Marketplace, covering
-      backend APIs, infrastructure, CI/CD and release. Built <strong>AI Cloud Gateway</strong>, an
-      OpenAI compatible LLM router for Amazon Bedrock and Azure AI Foundry: a FastAPI backend on
-      Lambda behind API Gateway and CloudFront, with Cognito auth, DynamoDB storage and a
-      Next.js / TypeScript dashboard on S3. Built <strong>Data Guard</strong>, PII, PHI and secret
-      detection and redaction for LLM pipelines, served as an HTTPS API on Lambda and as an MCP
-      server in Docker on Bedrock AgentCore. Integrated marketplace subscription, licensing and
-      usage metering with EventBridge and SQS, with API keys stored hashed. All infrastructure is
-      code in Terraform and CloudFormation, and GitHub Actions tests and deploys every release.
+      Shipped multiple SaaS products on the AWS and Azure marketplaces, including an LLM gateway
+      that sends each request to the cheapest model meeting a quality bar, and a sensitive data
+      redaction service for AI pipelines. Chose a serverless design so capacity and cost follow
+      unpredictable load, and rewrote the detection engine from quadratic to linear time when large
+      inputs hit the API's 29 second timeout. Kept the control plane (accounts, keys, billing)
+      apart from the model request path behind one CloudFront domain, so the data plane can move
+      from Lambda to containers without client changes. Model calls run in the customer's own AWS
+      account through a role deployed from our CloudFormation template, so we keep no copy of
+      their data. Hashed API keys, no long lived credentials in CI/CD, and isolated deploys per
+      component so one bad release cannot break another.
   - when: Mar 2025
     title: Industrial Attachment, United Ashuganj Energy Ltd.
     where: 195&nbsp;MW combined cycle gas engine power plant, Ashuganj
